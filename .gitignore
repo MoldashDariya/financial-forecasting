@@ -1,0 +1,28 @@
+# dependencies and build output
+node_modules/
+dist/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# local database (user accounts, session tokens, uploaded data) - never commit this
+backend/data/app.db
+backend/data/*.db-journal
+
+# licensed vendor data (LSEG / Refinitiv exports) - not allowed to be redistributed
+backend/data/raw/
+backend/data/processed/
+company data/
+
+# secrets and local settings
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

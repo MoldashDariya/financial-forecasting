@@ -1,0 +1,110 @@
+[
+    {
+        "date": "2026-04-01",
+        "predicted_revenue": 15.480735491936851
+    },
+    {
+        "date": "2026-07-01",
+        "predicted_revenue": 15.506640224141098
+    },
+    {
+        "date": "2026-10-01",
+        "predicted_revenue": 15.605378054736887
+    },
+    {
+        "date": "2027-01-01",
+        "predicted_revenue": 15.642893645019658
+    },
+    {
+        "date": "2027-04-01",
+        "predicted_revenue": 15.636134204005584
+    },
+    {
+        "date": "2027-07-01",
+        "predicted_revenue": 15.624278601179823
+    },
+    {
+        "date": "2027-10-01",
+        "predicted_revenue": 15.620636621715184
+    },
+    {
+        "date": "2028-01-01",
+        "predicted_revenue": 15.621829469855026
+    },
+    {
+        "date": "2028-04-01",
+        "predicted_revenue": 15.623217582849032
+    },
+    {
+        "date": "2028-07-01",
+        "predicted_revenue": 15.623549114315006
+    },
+    {
+        "date": "2028-10-01",
+        "predicted_revenue": 15.623367511417992
+    },
+    {
+        "date": "2029-01-01",
+        "predicted_revenue": 15.623208879317357
+    },
+    {
+        "date": "2029-04-01",
+        "predicted_revenue": 15.623181697069242
+    },
+    {
+        "date": "2029-07-01",
+        "predicted_revenue": 15.623207181660597
+    },
+    {
+        "date": "2029-10-01",
+        "predicted_revenue": 15.623224870554022
+    },
+    {
+        "date": "2030-01-01",
+        "predicted_revenue": 15.623226664316952
+    },
+    {
+        "date": "2030-04-01",
+        "predicted_revenue": 15.62322327570917
+    },
+    {
+        "date": "2030-07-01",
+        "predicted_revenue": 15.623221354029194
+    },
+    {
+        "date": "2030-10-01",
+        "predicted_revenue": 15.623221305722995
+    },
+    {
+        "date": "2031-01-01",
+        "predicted_revenue": 15.623221738630205
+    },
+    {
+        "date": "2031-04-01",
+        "predicted_revenue": 15.623221941380784
+    },
+    {
+        "date": "2031-07-01",
+        "predicted_revenue": 15.623221928657378
+    },
+    {
+        "date": "2031-10-01",
+        "predicted_revenue": 15.623221875106749
+    },
+    {
+        "date": "2032-01-01",
+        "predicted_revenue": 15.623221854446642
+    },
+    {
+        "date": "2032-04-01",
+        "predicted_revenue": 15.623221857974096
+    },
+    {
+        "date": "2032-07-01",
+        "predicted_revenue": 15.62322186441687
+    },
+    {
+        "date": "2032-10-01",
+        "predicted_revenue": 15.623221866430539
+    }
+]

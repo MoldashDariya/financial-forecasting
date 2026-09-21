@@ -1,0 +1,74 @@
+[
+    {
+        "company": "apple_final",
+        "date": "2025-12-27",
+        "year": 2025,
+        "quarter": 4,
+        "model": "Linear Regression",
+        "predicted_revenue": 117.15943881253764,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2026-03-27",
+        "year": 2026,
+        "quarter": 1,
+        "model": "Linear Regression",
+        "predicted_revenue": 97.89721592939003,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2026-06-27",
+        "year": 2026,
+        "quarter": 2,
+        "model": "Linear Regression",
+        "predicted_revenue": 89.49266396519684,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2026-09-27",
+        "year": 2026,
+        "quarter": 3,
+        "model": "Linear Regression",
+        "predicted_revenue": 96.17309148190373,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2026-12-27",
+        "year": 2026,
+        "quarter": 4,
+        "model": "Linear Regression",
+        "predicted_revenue": 107.58082861701243,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2027-03-27",
+        "year": 2027,
+        "quarter": 1,
+        "model": "Linear Regression",
+        "predicted_revenue": 92.13112310561158,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2027-06-27",
+        "year": 2027,
+        "quarter": 2,
+        "model": "Linear Regression",
+        "predicted_revenue": 81.43914830848199,
+        "revenue_unit": "billion USD"
+    },
+    {
+        "company": "apple_final",
+        "date": "2027-09-27",
+        "year": 2027,
+        "quarter": 3,
+        "model": "Linear Regression",
+        "predicted_revenue": 86.68748516188595,
+        "revenue_unit": "billion USD"
+    }
+]

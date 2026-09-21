@@ -1,0 +1,188 @@
+{
+    "company": "apple_final",
+    "rows_used": 68,
+    "test_size": 8,
+    "macro_features_used": [
+        "CPI_lag1",
+        "DGS10_lag1",
+        "BRENT_lag1",
+        "NASDAQ_lag1",
+        "SP500_lag1"
+    ],
+    "best_model_for_this_company": "Linear Regression",
+    "top_3_models_for_this_company": [
+        {
+            "rank": 1,
+            "model": "Linear Regression",
+            "MAPE": 4.769234887868413,
+            "RMSE": 5.400363802411793,
+            "MAE": 4.863379286943918,
+            "sMAPE": 4.905601151505936
+        },
+        {
+            "rank": 2,
+            "model": "Random Forest",
+            "MAPE": 5.5491943893233024,
+            "RMSE": 7.634507437171446,
+            "MAE": 5.987101686415395,
+            "sMAPE": 5.713850871436945
+        },
+        {
+            "rank": 3,
+            "model": "XGBoost",
+            "MAPE": 6.854669835602017,
+            "RMSE": 8.676220276166593,
+            "MAE": 7.305835456848145,
+            "sMAPE": 7.149645363611451
+        }
+    ],
+    "all_metrics": {
+        "Linear Regression": {
+            "MAE": 4.863379286943918,
+            "RMSE": 5.400363802411793,
+            "MAPE": 4.769234887868413,
+            "sMAPE": 4.905601151505936
+        },
+        "Random Forest": {
+            "MAE": 5.987101686415395,
+            "RMSE": 7.634507437171446,
+            "MAPE": 5.5491943893233024,
+            "sMAPE": 5.713850871436945
+        },
+        "SVR": {
+            "MAE": 23.789207137113337,
+            "RMSE": 26.028378547955793,
+            "MAPE": 22.752393961900985,
+            "sMAPE": 26.085017892724586
+        },
+        "XGBoost": {
+            "MAE": 7.305835456848145,
+            "RMSE": 8.676220276166593,
+            "MAPE": 6.854669835602017,
+            "sMAPE": 7.149645363611451
+        }
+    },
+    "future_forecast_steps": 8,
+    "future_forecast_preview": [
+        {
+            "company": "apple_final",
+            "date": "2025-12-27",
+            "year": 2025,
+            "quarter": 4,
+            "model": "Linear Regression",
+            "predicted_revenue": 117.15943881253764,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-03-27",
+            "year": 2026,
+            "quarter": 1,
+            "model": "Linear Regression",
+            "predicted_revenue": 97.89721592939003,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-06-27",
+            "year": 2026,
+            "quarter": 2,
+            "model": "Linear Regression",
+            "predicted_revenue": 89.49266396519684,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-09-27",
+            "year": 2026,
+            "quarter": 3,
+            "model": "Linear Regression",
+            "predicted_revenue": 96.17309148190373,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-12-27",
+            "year": 2026,
+            "quarter": 4,
+            "model": "Linear Regression",
+            "predicted_revenue": 107.58082861701243,
+            "revenue_unit": "billion USD"
+        }
+    ],
+    "future_forecast_full": [
+        {
+            "company": "apple_final",
+            "date": "2025-12-27",
+            "year": 2025,
+            "quarter": 4,
+            "model": "Linear Regression",
+            "predicted_revenue": 117.15943881253764,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-03-27",
+            "year": 2026,
+            "quarter": 1,
+            "model": "Linear Regression",
+            "predicted_revenue": 97.89721592939003,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-06-27",
+            "year": 2026,
+            "quarter": 2,
+            "model": "Linear Regression",
+            "predicted_revenue": 89.49266396519684,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-09-27",
+            "year": 2026,
+            "quarter": 3,
+            "model": "Linear Regression",
+            "predicted_revenue": 96.17309148190373,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2026-12-27",
+            "year": 2026,
+            "quarter": 4,
+            "model": "Linear Regression",
+            "predicted_revenue": 107.58082861701243,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2027-03-27",
+            "year": 2027,
+            "quarter": 1,
+            "model": "Linear Regression",
+            "predicted_revenue": 92.13112310561158,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2027-06-27",
+            "year": 2027,
+            "quarter": 2,
+            "model": "Linear Regression",
+            "predicted_revenue": 81.43914830848199,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "apple_final",
+            "date": "2027-09-27",
+            "year": 2027,
+            "quarter": 3,
+            "model": "Linear Regression",
+            "predicted_revenue": 86.68748516188595,
+            "revenue_unit": "billion USD"
+        }
+    ],
+    "revenue_unit": "billion USD"
+}

@@ -1,0 +1,4366 @@
+{
+    "company": "amd",
+    "rows_original": 72,
+    "rows_modeling": 64,
+    "feature_engineering": {
+        "lag_logic": [
+            "lag_1",
+            "lag_2",
+            "lag_4",
+            "lag_8"
+        ],
+        "rolling_logic": "roll_mean_4/8 and roll_std_4/8 from revenue.shift(1).rolling(window)",
+        "growth_logic": "growth_1 = pct_change(1).shift(1); log_growth_1 = log diff shifted by 1",
+        "macro_lag_logic": "macro_feature_lag_1q = macro_feature.shift(1) by company",
+        "micro_logic": "for each micro feature: lag_1, lag_4, growth_qoq shift(1), margin_lag1",
+        "active_macro_features": [
+            "earnings_before_interest_taxes_depreciation_amortization_ebi_lag_1q",
+            "income_tax_rate_lag_1q",
+            "earnings_before_interest_taxes_depreciation_amortization_ebi_54_lag_1q",
+            "interest_coverage_ratio_lag_1q",
+            "earnings_retention_rate_lag_1q",
+            "earnings_retention_rate_ttm_lag_1q",
+            "reinvestment_rate_ttm_lag_1q",
+            "CPI_lag_1q",
+            "DGS10_lag_1q",
+            "BRENT_lag_1q",
+            "NASDAQ_lag_1q",
+            "SP500_lag_1q"
+        ],
+        "active_micro_features": [
+            "statement_data_lag_1",
+            "statement_data_lag_4",
+            "statement_data_growth_qoq",
+            "statement_data_margin_lag1",
+            "gross_profit_industrials_property_total_lag_1",
+            "gross_profit_industrials_property_total_lag_4",
+            "gross_profit_industrials_property_total_growth_qoq",
+            "gross_profit_industrials_property_total_margin_lag1",
+            "operating_profit_before_non_recurring_income_expense_lag_1",
+            "operating_profit_before_non_recurring_income_expense_lag_4",
+            "operating_profit_before_non_recurring_income_expense_growth_qoq",
+            "operating_profit_before_non_recurring_income_expense_margin_lag1",
+            "income_before_discontinued_operations_extraordinary_items_lag_1",
+            "income_before_discontinued_operations_extraordinary_items_lag_4",
+            "income_before_discontinued_operations_extraordinary_items_growth_qoq",
+            "income_before_discontinued_operations_extraordinary_items_margin_lag1",
+            "cash_cash_equivalents_lag_1",
+            "cash_cash_equivalents_lag_4",
+            "cash_cash_equivalents_growth_qoq",
+            "cash_cash_equivalents_margin_lag1",
+            "cash_short_term_investments_lag_1",
+            "cash_short_term_investments_lag_4",
+            "cash_short_term_investments_growth_qoq",
+            "cash_short_term_investments_margin_lag1",
+            "total_assets_lag_1",
+            "total_assets_lag_4",
+            "total_assets_growth_qoq",
+            "total_assets_margin_lag1",
+            "debt_total_lag_1",
+            "debt_total_lag_4",
+            "debt_total_growth_qoq",
+            "debt_total_margin_lag1",
+            "common_equity_total_lag_1",
+            "common_equity_total_lag_4",
+            "common_equity_total_growth_qoq",
+            "common_equity_total_margin_lag1",
+            "net_cash_flow_from_operating_activities_lag_1",
+            "net_cash_flow_from_operating_activities_lag_4",
+            "net_cash_flow_from_operating_activities_growth_qoq",
+            "net_cash_flow_from_operating_activities_margin_lag1",
+            "depreciation_depletion_amortization_including_impairment_cas_lag_1",
+            "depreciation_depletion_amortization_including_impairment_cas_lag_4",
+            "depreciation_depletion_amortization_including_impairment_cas_growth_qoq",
+            "depreciation_depletion_amortization_including_impairment_cas_margin_lag1",
+            "capital_expenditures_net_cash_flow_lag_1",
+            "capital_expenditures_net_cash_flow_lag_4",
+            "capital_expenditures_net_cash_flow_growth_qoq",
+            "capital_expenditures_net_cash_flow_margin_lag1",
+            "net_change_in_cash_total_lag_1",
+            "net_change_in_cash_total_lag_4",
+            "net_change_in_cash_total_growth_qoq",
+            "net_change_in_cash_total_margin_lag1",
+            "free_cash_flow_net_of_dividends_lag_1",
+            "free_cash_flow_net_of_dividends_lag_4",
+            "free_cash_flow_net_of_dividends_growth_qoq",
+            "free_cash_flow_net_of_dividends_margin_lag1",
+            "dividend_yield_common_stock_net_issue_specific_ttm_lag_1",
+            "dividend_yield_common_stock_net_issue_specific_ttm_lag_4",
+            "dividend_yield_common_stock_net_issue_specific_ttm_growth_qoq",
+            "dividend_yield_common_stock_net_issue_specific_ttm_margin_lag1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_lag_1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_lag_4",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_growth_qoq",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_margin_lag1",
+            "shares_used_to_calculate_diluted_eps_total_lag_1",
+            "shares_used_to_calculate_diluted_eps_total_lag_4",
+            "shares_used_to_calculate_diluted_eps_total_growth_qoq",
+            "shares_used_to_calculate_diluted_eps_total_margin_lag1",
+            "gross_profit_margin_lag_1",
+            "gross_profit_margin_lag_4",
+            "gross_profit_margin_growth_qoq",
+            "gross_profit_margin_margin_lag1",
+            "ebitda_margin_lag_1",
+            "ebitda_margin_lag_4",
+            "ebitda_margin_growth_qoq",
+            "ebitda_margin_margin_lag1",
+            "operating_margin_lag_1",
+            "operating_margin_lag_4",
+            "operating_margin_growth_qoq",
+            "operating_margin_margin_lag1",
+            "income_before_tax_margin_lag_1",
+            "income_before_tax_margin_lag_4",
+            "income_before_tax_margin_growth_qoq",
+            "income_before_tax_margin_margin_lag1",
+            "net_margin_lag_1",
+            "net_margin_lag_4",
+            "net_margin_growth_qoq",
+            "net_margin_margin_lag1",
+            "free_cash_flow_yield_ttm_lag_1",
+            "free_cash_flow_yield_ttm_lag_4",
+            "free_cash_flow_yield_ttm_growth_qoq",
+            "free_cash_flow_yield_ttm_margin_lag1",
+            "return_on_average_common_equity_income_available_to_common_e_lag_1",
+            "return_on_average_common_equity_income_available_to_common_e_lag_4",
+            "return_on_average_common_equity_income_available_to_common_e_growth_qoq",
+            "return_on_average_common_equity_income_available_to_common_e_margin_lag1",
+            "return_on_average_total_assets_income_before_discontinued_op_lag_1",
+            "return_on_average_total_assets_income_before_discontinued_op_lag_4",
+            "return_on_average_total_assets_income_before_discontinued_op_growth_qoq",
+            "return_on_average_total_assets_income_before_discontinued_op_margin_lag1",
+            "return_on_invested_capital_ttm_lag_1",
+            "return_on_invested_capital_ttm_lag_4",
+            "return_on_invested_capital_ttm_growth_qoq",
+            "return_on_invested_capital_ttm_margin_lag1",
+            "revenue_from_business_activities_total_lag_1",
+            "revenue_from_business_activities_total_lag_4",
+            "revenue_from_business_activities_total_growth_qoq",
+            "revenue_from_business_activities_total_margin_lag1",
+            "operating_profit_before_non_recurring_income_expense_53_lag_1",
+            "operating_profit_before_non_recurring_income_expense_53_lag_4",
+            "operating_profit_before_non_recurring_income_expense_53_growth_qoq",
+            "operating_profit_before_non_recurring_income_expense_53_margin_lag1",
+            "income_before_discontinued_operations_extraordinary_items_55_lag_1",
+            "income_before_discontinued_operations_extraordinary_items_55_lag_4",
+            "income_before_discontinued_operations_extraordinary_items_55_growth_qoq",
+            "income_before_discontinued_operations_extraordinary_items_55_margin_lag1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_56_lag_1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_56_lag_4",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_56_growth_qoq",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_56_margin_lag1",
+            "common_shares_outstanding_total_lag_1",
+            "common_shares_outstanding_total_lag_4",
+            "common_shares_outstanding_total_growth_qoq",
+            "common_shares_outstanding_total_margin_lag1",
+            "total_debt_percentage_of_total_assets_lag_1",
+            "total_debt_percentage_of_total_assets_lag_4",
+            "total_debt_percentage_of_total_assets_growth_qoq",
+            "total_debt_percentage_of_total_assets_margin_lag1",
+            "total_debt_percentage_of_total_capital_lag_1",
+            "total_debt_percentage_of_total_capital_lag_4",
+            "total_debt_percentage_of_total_capital_growth_qoq",
+            "total_debt_percentage_of_total_capital_margin_lag1",
+            "total_debt_percentage_of_total_equity_lag_1",
+            "total_debt_percentage_of_total_equity_lag_4",
+            "total_debt_percentage_of_total_equity_growth_qoq",
+            "total_debt_percentage_of_total_equity_margin_lag1",
+            "dividend_payout_ratio_lag_1",
+            "dividend_payout_ratio_lag_4",
+            "dividend_payout_ratio_growth_qoq",
+            "dividend_payout_ratio_margin_lag1",
+            "market_capitalization_lag_1",
+            "market_capitalization_lag_4",
+            "market_capitalization_growth_qoq",
+            "market_capitalization_margin_lag1",
+            "debt_total_67_lag_1",
+            "debt_total_67_lag_4",
+            "debt_total_67_growth_qoq",
+            "debt_total_67_margin_lag1",
+            "cash_short_term_investments_total_lag_1",
+            "cash_short_term_investments_total_lag_4",
+            "cash_short_term_investments_total_growth_qoq",
+            "cash_short_term_investments_total_margin_lag1",
+            "enterprise_value_lag_1",
+            "enterprise_value_lag_4",
+            "enterprise_value_growth_qoq",
+            "enterprise_value_margin_lag1",
+            "asset_turnover_ttm_lag_1",
+            "asset_turnover_ttm_lag_4",
+            "asset_turnover_ttm_growth_qoq",
+            "asset_turnover_ttm_margin_lag1",
+            "income_before_tax_margin_ttm_lag_1",
+            "income_before_tax_margin_ttm_lag_4",
+            "income_before_tax_margin_ttm_growth_qoq",
+            "income_before_tax_margin_ttm_margin_lag1",
+            "pretax_roa_ttm_lag_1",
+            "pretax_roa_ttm_lag_4",
+            "pretax_roa_ttm_growth_qoq",
+            "pretax_roa_ttm_margin_lag1",
+            "total_assets_to_total_shareholders_equity_including_minority_lag_1",
+            "total_assets_to_total_shareholders_equity_including_minority_lag_4",
+            "total_assets_to_total_shareholders_equity_including_minority_growth_qoq",
+            "total_assets_to_total_shareholders_equity_including_minority_margin_lag1",
+            "pretax_roe_ttm_lag_1",
+            "pretax_roe_ttm_lag_4",
+            "pretax_roe_ttm_growth_qoq",
+            "pretax_roe_ttm_margin_lag1",
+            "tax_complement_ttm_lag_1",
+            "tax_complement_ttm_lag_4",
+            "tax_complement_ttm_growth_qoq",
+            "tax_complement_ttm_margin_lag1",
+            "return_on_average_common_equity_income_available_to_common_e_78_lag_1",
+            "return_on_average_common_equity_income_available_to_common_e_78_lag_4",
+            "return_on_average_common_equity_income_available_to_common_e_78_growth_qoq",
+            "return_on_average_common_equity_income_available_to_common_e_78_margin_lag1",
+            "current_ratio_lag_1",
+            "current_ratio_lag_4",
+            "current_ratio_growth_qoq",
+            "current_ratio_margin_lag1",
+            "quick_ratio_lag_1",
+            "quick_ratio_lag_4",
+            "quick_ratio_growth_qoq",
+            "quick_ratio_margin_lag1",
+            "working_capital_to_total_assets_lag_1",
+            "working_capital_to_total_assets_lag_4",
+            "working_capital_to_total_assets_growth_qoq",
+            "working_capital_to_total_assets_margin_lag1",
+            "accounts_receivable_turnover_ttm_lag_1",
+            "accounts_receivable_turnover_ttm_lag_4",
+            "accounts_receivable_turnover_ttm_growth_qoq",
+            "accounts_receivable_turnover_ttm_margin_lag1",
+            "average_receivables_collection_days_ttm_lag_1",
+            "average_receivables_collection_days_ttm_lag_4",
+            "average_receivables_collection_days_ttm_growth_qoq",
+            "average_receivables_collection_days_ttm_margin_lag1",
+            "payables_turnover_ttm_lag_1",
+            "payables_turnover_ttm_lag_4",
+            "payables_turnover_ttm_growth_qoq",
+            "payables_turnover_ttm_margin_lag1",
+            "average_payables_payment_days_ttm_lag_1",
+            "average_payables_payment_days_ttm_lag_4",
+            "average_payables_payment_days_ttm_growth_qoq",
+            "average_payables_payment_days_ttm_margin_lag1",
+            "inventory_turnover_ttm_lag_1",
+            "inventory_turnover_ttm_lag_4",
+            "inventory_turnover_ttm_growth_qoq",
+            "inventory_turnover_ttm_margin_lag1",
+            "average_inventory_days_ttm_lag_1",
+            "average_inventory_days_ttm_lag_4",
+            "average_inventory_days_ttm_growth_qoq",
+            "average_inventory_days_ttm_margin_lag1",
+            "average_net_trade_cycle_days_ttm_lag_1",
+            "average_net_trade_cycle_days_ttm_lag_4",
+            "average_net_trade_cycle_days_ttm_growth_qoq",
+            "average_net_trade_cycle_days_ttm_margin_lag1",
+            "fiscal_year_lag_1",
+            "fiscal_year_lag_4",
+            "fiscal_year_growth_qoq",
+            "fiscal_year_margin_lag1",
+            "fiscal_quarter_lag_1",
+            "fiscal_quarter_lag_4",
+            "fiscal_quarter_growth_qoq",
+            "fiscal_quarter_margin_lag1"
+        ]
+    },
+    "validation_split": {
+        "primary": "split_last_n_by_company(n_test=8)",
+        "robustness_16q_enabled": false
+    },
+    "model_comparison_logic": "Rank by sMAPE, then MAPE, then RMSE, then MAE",
+    "log_target_handling": "log1p target with Duan smearing on inverse transform",
+    "selected_target_policy": "log-target company policy from notebook",
+    "recursive_forecasting_logic": "Step-by-step: append future quarter row, rebuild features, predict, write predicted revenue back, repeat",
+    "all_model_metrics": [
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 0.8857274651990676,
+            "RMSE": 1.0024305682582573,
+            "MAPE": 11.335534391176214,
+            "sMAPE": 12.179542163274,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 1.930147467398662,
+            "RMSE": 2.396304637245204,
+            "MAPE": 22.872993838560383,
+            "sMAPE": 27.14654874972527,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 3.197333559993351,
+            "RMSE": 3.520237524418559,
+            "MAPE": 40.46087492705195,
+            "sMAPE": 51.990520738927515,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 4.678931414478724,
+            "RMSE": 4.867764017707431,
+            "MAPE": 66.50421273641858,
+            "sMAPE": 104.51973456398802,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 2.5391872870576218,
+            "RMSE": 2.8149333314646157,
+            "MAPE": 33.6925080812847,
+            "sMAPE": 41.25271962530774,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 4.059184627662994,
+            "RMSE": 4.305122708001667,
+            "MAPE": 55.07028537265038,
+            "sMAPE": 76.85586370976539,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 8,
+            "MAE": 1.5624748768682426,
+            "RMSE": 1.9472211474313312,
+            "MAPE": 18.832069736269112,
+            "sMAPE": 21.19253500256586,
+            "split": "last_8q"
+        }
+    ],
+    "all_model_metrics_8q": [
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression",
+            "target_type": "raw revenue",
+            "n_test_points": 8,
+            "MAE": 1.0661772619753762,
+            "RMSE": 1.1839133092619962,
+            "MAPE": 13.986116434955745,
+            "sMAPE": 15.285451067610442,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest",
+            "target_type": "raw revenue",
+            "n_test_points": 8,
+            "MAE": 1.9706094444444493,
+            "RMSE": 2.4103250013134008,
+            "MAPE": 23.484508643467667,
+            "sMAPE": 27.900851476166377,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR",
+            "target_type": "raw revenue",
+            "n_test_points": 8,
+            "MAE": 3.0714684981953324,
+            "RMSE": 3.5304673109730142,
+            "MAPE": 37.950538843059825,
+            "sMAPE": 48.96553510786135,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 0.8857274651990676,
+            "RMSE": 1.0024305682582573,
+            "MAPE": 11.335534391176214,
+            "sMAPE": 12.179542163274,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 1.930147467398662,
+            "RMSE": 2.396304637245204,
+            "MAPE": 22.872993838560383,
+            "sMAPE": 27.14654874972527,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 3.197333559993351,
+            "RMSE": 3.520237524418559,
+            "MAPE": 40.46087492705195,
+            "sMAPE": 51.990520738927515,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression",
+            "target_type": "raw revenue",
+            "n_test_points": 8,
+            "MAE": 6.570829698673537,
+            "RMSE": 6.778161152780753,
+            "MAPE": 92.72733902137678,
+            "sMAPE": 160.31231918666882,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest",
+            "target_type": "raw revenue",
+            "n_test_points": 8,
+            "MAE": 2.0694208746693192,
+            "RMSE": 2.4024686608569943,
+            "MAPE": 26.887831704722604,
+            "sMAPE": 31.92315237279677,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR",
+            "target_type": "raw revenue",
+            "n_test_points": 8,
+            "MAE": 3.7681940651037524,
+            "RMSE": 4.027806022678012,
+            "MAPE": 50.86738170761438,
+            "sMAPE": 69.16115532004203,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 4.678931414478724,
+            "RMSE": 4.867764017707431,
+            "MAPE": 66.50421273641858,
+            "sMAPE": 104.51973456398802,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 2.5391872870576218,
+            "RMSE": 2.8149333314646157,
+            "MAPE": 33.6925080812847,
+            "sMAPE": 41.25271962530774,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 4.059184627662994,
+            "RMSE": 4.305122708001667,
+            "MAPE": 55.07028537265038,
+            "sMAPE": 76.85586370976539,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 8,
+            "MAE": 1.5624748768682426,
+            "RMSE": 1.9472211474313312,
+            "MAPE": 18.832069736269112,
+            "sMAPE": 21.19253500256586,
+            "split": "last_8q"
+        }
+    ],
+    "all_model_metrics_16q": [],
+    "top_3_models_for_this_company": [
+        {
+            "rank": 1,
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 0.8857274651990676,
+            "RMSE": 1.0024305682582573,
+            "MAPE": 11.335534391176214,
+            "sMAPE": 12.179542163274,
+            "split": "last_8q"
+        },
+        {
+            "rank": 2,
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 8,
+            "MAE": 1.5624748768682426,
+            "RMSE": 1.9472211474313312,
+            "MAPE": 18.832069736269112,
+            "sMAPE": 21.19253500256586,
+            "split": "last_8q"
+        },
+        {
+            "rank": 3,
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 1.930147467398662,
+            "RMSE": 2.396304637245204,
+            "MAPE": 22.872993838560383,
+            "sMAPE": 27.14654874972527,
+            "split": "last_8q"
+        }
+    ],
+    "best_model_for_this_company": "Linear Regression log-target",
+    "best_model": "Linear Regression log-target",
+    "top_models": [
+        {
+            "rank": 1,
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 0.8857274651990676,
+            "RMSE": 1.0024305682582573,
+            "MAPE": 11.335534391176214,
+            "sMAPE": 12.179542163274,
+            "split": "last_8q"
+        },
+        {
+            "rank": 2,
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 8,
+            "MAE": 1.5624748768682426,
+            "RMSE": 1.9472211474313312,
+            "MAPE": 18.832069736269112,
+            "sMAPE": 21.19253500256586,
+            "split": "last_8q"
+        },
+        {
+            "rank": 3,
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 1.930147467398662,
+            "RMSE": 2.396304637245204,
+            "MAPE": 22.872993838560383,
+            "sMAPE": 27.14654874972527,
+            "split": "last_8q"
+        }
+    ],
+    "leaderboard": [
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 0.8857274651990676,
+            "RMSE": 1.0024305682582573,
+            "MAPE": 11.335534391176214,
+            "sMAPE": 12.179542163274,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 8,
+            "MAE": 1.5624748768682426,
+            "RMSE": 1.9472211474313312,
+            "MAPE": 18.832069736269112,
+            "sMAPE": 21.19253500256586,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 1.930147467398662,
+            "RMSE": 2.396304637245204,
+            "MAPE": 22.872993838560383,
+            "sMAPE": 27.14654874972527,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 2.5391872870576218,
+            "RMSE": 2.8149333314646157,
+            "MAPE": 33.6925080812847,
+            "sMAPE": 41.25271962530774,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 3.197333559993351,
+            "RMSE": 3.520237524418559,
+            "MAPE": 40.46087492705195,
+            "sMAPE": 51.990520738927515,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 4.059184627662994,
+            "RMSE": 4.305122708001667,
+            "MAPE": 55.07028537265038,
+            "sMAPE": 76.85586370976539,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 8,
+            "MAE": 4.678931414478724,
+            "RMSE": 4.867764017707431,
+            "MAPE": 66.50421273641858,
+            "sMAPE": 104.51973456398802,
+            "split": "last_8q"
+        }
+    ],
+    "scenario_comparison": [
+        {
+            "scenario": "S1",
+            "scenario_name": "engineered_only",
+            "best_model": "Linear Regression log-target",
+            "model_family": "machine_learning",
+            "MAE": 0.8857274651990676,
+            "RMSE": 1.0024305682582573,
+            "MAPE": 11.335534391176214,
+            "sMAPE": 12.179542163274,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "scenario_name": "engineered_plus_macro",
+            "best_model": "Random Forest log-target",
+            "model_family": "machine_learning",
+            "MAE": 2.5391872870576218,
+            "RMSE": 2.8149333314646157,
+            "MAPE": 33.6925080812847,
+            "sMAPE": 41.25271962530774,
+            "split": "last_8q"
+        }
+    ],
+    "scenario_skip_reason": {
+        "S2": "No usable rows after dropna for required feature set.",
+        "S4": "No usable rows after dropna for required feature set."
+    },
+    "model_skip_reason": {
+        "Prophet": "Package not installed.",
+        "LSTM": "TensorFlow not installed."
+    },
+    "scenario_coverage": {
+        "attempted": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+        ],
+        "successful": [
+            "S1",
+            "S3"
+        ],
+        "skipped": [
+            "S2",
+            "S4"
+        ]
+    },
+    "forecast_start_date": "2026-03-31",
+    "forecast_end_date": "2032-12-31",
+    "forecast_horizon_quarters": 28,
+    "models_attempted": [
+        "S1::Linear Regression",
+        "S1::Linear Regression log-target",
+        "S1::Random Forest",
+        "S1::Random Forest log-target",
+        "S1::SVR",
+        "S1::SVR log-target",
+        "S3::Linear Regression",
+        "S3::Linear Regression log-target",
+        "S3::Random Forest",
+        "S3::Random Forest log-target",
+        "S3::SVR",
+        "S3::SVR log-target",
+        "TS::ARIMA"
+    ],
+    "deployment_selected_model": "SVR log-target",
+    "deployment_selected_scenario": "S3",
+    "deployment_selection_reason": "Accepted: long-horizon recursive forecast passed sanity checks.",
+    "frontend_notice": null,
+    "validation_predictions": [
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 5.7033407888199905,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 4.678538144610622,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 5.244090956464601,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 6.274441115715139,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 7.045139738930539,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 6.91152247153664,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 7.480715863729309,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 9.039474402030132,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 5.563834365079362,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 5.430936269841267,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 5.294807460317457,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 5.708254920634913,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 5.796951587301581,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 5.682420714285707,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 5.601936269841264,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 5.78365158730158,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 4.4843847958780705,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 4.291115731342647,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 5.330830110236134,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 5.247219569932061,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 4.098691837489167,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 4.133243947572071,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 4.453396303634456,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 3.8293697183527375,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 5.608480752822076,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 5.120647593345198,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 5.597490528322121,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 6.4150270864578935,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 7.003605566543191,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 7.165127644907208,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 7.658016396188163,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 9.062746215465761,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 5.710149494620957,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 5.5886426235936515,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 5.6963664135108845,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 5.679723858746383,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 5.742590709450564,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 5.7123735700366405,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 5.6445899814477345,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 5.704682598645801,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 3.9685330285151412,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 3.7628733432964565,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 5.110528554891113,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 5.13222527312069,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 3.9191409827773716,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 4.09659601279858,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 4.716541420674534,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 4.1548929039793085,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2023-12-30",
+            "actual": 6.17,
+            "predicted": 1.656681659737627,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 0.31369943913751897,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": -2.384001563327349,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 0.2593817099982232,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 0.6909494045514961,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 3.039861925111838,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 0.27179209133035087,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 0.9449977440719977,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2023-12-30",
+            "actual": 6.17,
+            "predicted": 4.861704973544967,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 4.90808838624338,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 4.848667156084652,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 4.796153624338618,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 5.139126164021158,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 5.41658552910052,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 5.398375370370362,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 5.435931798941789,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2023-12-30",
+            "actual": 6.17,
+            "predicted": 3.4801876006497148,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 3.3810931993021733,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 3.364439557076955,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 3.3963913525236276,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 3.4013860761204127,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 3.4165970257373006,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 3.4114699922067713,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 3.362882675553028,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2023-12-30",
+            "actual": 6.17,
+            "predicted": 1.6151624231484394,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 1.393696367092371,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 0.6316644147785496,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 1.6428977034101355,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 2.564002087213096,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 5.796015201138591,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 2.7027506706552322,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 3.5823598167337964,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2023-12-30",
+            "actual": 6.17,
+            "predicted": 4.3880556904581915,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 4.429765426537904,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 4.30494830591845,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 4.40606402810812,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 4.698112154229161,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 4.970903093026491,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 4.896015654761156,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 4.952637350499553,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2023-12-30",
+            "actual": 6.17,
+            "predicted": 3.2395004081276197,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 3.0717196420013453,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 2.977565535897027,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 3.104911313485276,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 3.1658088931625006,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 3.1790889050140074,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 3.166357805976851,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 2.9815704750314165,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 6.262229990839469,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 6.295730302164888,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 6.307898479226223,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 6.312318274957604,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 6.313923658755741,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 6.314506775554786,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 6.314718578615042,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 6.314795510949022,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-03-30",
+            "actual": 5.47,
+            "predicted": 6.262229990839469,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-06-29",
+            "actual": 5.84,
+            "predicted": 6.295730302164888,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-09-28",
+            "actual": 6.82,
+            "predicted": 6.307898479226223,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2024-12-28",
+            "actual": 7.66,
+            "predicted": 6.312318274957604,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-03-29",
+            "actual": 7.44,
+            "predicted": 6.313923658755741,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-06-28",
+            "actual": 7.69,
+            "predicted": 6.314506775554786,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-09-27",
+            "actual": 9.25,
+            "predicted": 6.314718578615042,
+            "split": "last_8q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2025-12-27",
+            "actual": 10.27,
+            "predicted": 6.314795510949022,
+            "split": "last_8q"
+        }
+    ],
+    "robustness_validation_predictions_16q": [],
+    "future_forecast_steps": 28,
+    "future_forecast_preview": [
+        {
+            "date": "2026-03-31",
+            "year": 2026,
+            "quarter": 1,
+            "predicted_revenue": 6.88624848732073
+        },
+        {
+            "date": "2026-06-30",
+            "year": 2026,
+            "quarter": 2,
+            "predicted_revenue": 4.333261279099395
+        },
+        {
+            "date": "2026-09-30",
+            "year": 2026,
+            "quarter": 3,
+            "predicted_revenue": 3.7850870905218628
+        },
+        {
+            "date": "2026-12-30",
+            "year": 2026,
+            "quarter": 4,
+            "predicted_revenue": 3.926535791944673
+        },
+        {
+            "date": "2027-03-30",
+            "year": 2027,
+            "quarter": 1,
+            "predicted_revenue": 5.152054082806386
+        }
+    ],
+    "future_forecast_full": [
+        {
+            "date": "2026-03-31",
+            "year": 2026,
+            "quarter": 1,
+            "predicted_revenue": 6.88624848732073
+        },
+        {
+            "date": "2026-06-30",
+            "year": 2026,
+            "quarter": 2,
+            "predicted_revenue": 4.333261279099395
+        },
+        {
+            "date": "2026-09-30",
+            "year": 2026,
+            "quarter": 3,
+            "predicted_revenue": 3.7850870905218628
+        },
+        {
+            "date": "2026-12-30",
+            "year": 2026,
+            "quarter": 4,
+            "predicted_revenue": 3.926535791944673
+        },
+        {
+            "date": "2027-03-30",
+            "year": 2027,
+            "quarter": 1,
+            "predicted_revenue": 5.152054082806386
+        },
+        {
+            "date": "2027-06-30",
+            "year": 2027,
+            "quarter": 2,
+            "predicted_revenue": 6.189723904779558
+        },
+        {
+            "date": "2027-09-30",
+            "year": 2027,
+            "quarter": 3,
+            "predicted_revenue": 6.133291210872847
+        },
+        {
+            "date": "2027-12-30",
+            "year": 2027,
+            "quarter": 4,
+            "predicted_revenue": 6.176193255442191
+        },
+        {
+            "date": "2028-03-30",
+            "year": 2028,
+            "quarter": 1,
+            "predicted_revenue": 6.675991902249944
+        },
+        {
+            "date": "2028-06-30",
+            "year": 2028,
+            "quarter": 2,
+            "predicted_revenue": 7.25432192900926
+        },
+        {
+            "date": "2028-09-30",
+            "year": 2028,
+            "quarter": 3,
+            "predicted_revenue": 7.910118586168297
+        },
+        {
+            "date": "2028-12-30",
+            "year": 2028,
+            "quarter": 4,
+            "predicted_revenue": 8.632211071668069
+        },
+        {
+            "date": "2029-03-30",
+            "year": 2029,
+            "quarter": 1,
+            "predicted_revenue": 7.286339896808741
+        },
+        {
+            "date": "2029-06-30",
+            "year": 2029,
+            "quarter": 2,
+            "predicted_revenue": 5.907211324989001
+        },
+        {
+            "date": "2029-09-30",
+            "year": 2029,
+            "quarter": 3,
+            "predicted_revenue": 5.617792735203961
+        },
+        {
+            "date": "2029-12-30",
+            "year": 2029,
+            "quarter": 4,
+            "predicted_revenue": 6.750916258017335
+        },
+        {
+            "date": "2030-03-30",
+            "year": 2030,
+            "quarter": 1,
+            "predicted_revenue": 7.100909485813567
+        },
+        {
+            "date": "2030-06-30",
+            "year": 2030,
+            "quarter": 2,
+            "predicted_revenue": 7.36216552019261
+        },
+        {
+            "date": "2030-09-30",
+            "year": 2030,
+            "quarter": 3,
+            "predicted_revenue": 7.6794353466328
+        },
+        {
+            "date": "2030-12-30",
+            "year": 2030,
+            "quarter": 4,
+            "predicted_revenue": 8.05717812177971
+        },
+        {
+            "date": "2031-03-30",
+            "year": 2031,
+            "quarter": 1,
+            "predicted_revenue": 6.777747585928884
+        },
+        {
+            "date": "2031-06-30",
+            "year": 2031,
+            "quarter": 2,
+            "predicted_revenue": 5.874528908492686
+        },
+        {
+            "date": "2031-09-30",
+            "year": 2031,
+            "quarter": 3,
+            "predicted_revenue": 6.23233420109807
+        },
+        {
+            "date": "2031-12-30",
+            "year": 2031,
+            "quarter": 4,
+            "predicted_revenue": 7.888552471477266
+        },
+        {
+            "date": "2032-03-30",
+            "year": 2032,
+            "quarter": 1,
+            "predicted_revenue": 6.8871230595437885
+        },
+        {
+            "date": "2032-06-30",
+            "year": 2032,
+            "quarter": 2,
+            "predicted_revenue": 6.059703952667209
+        },
+        {
+            "date": "2032-09-30",
+            "year": 2032,
+            "quarter": 3,
+            "predicted_revenue": 6.3805875658741735
+        },
+        {
+            "date": "2032-12-30",
+            "year": 2032,
+            "quarter": 4,
+            "predicted_revenue": 7.996957854819882
+        }
+    ],
+    "future_forecast_until_2032": {
+        "forecast_start_date": "2026-03-31",
+        "forecast_end_date": "2032-12-31",
+        "horizon_quarters": 28,
+        "selected_for_deployment": {
+            "model": "SVR log-target",
+            "scenario": "S3"
+        },
+        "forecast_points": [
+            {
+                "date": "2026-03-31",
+                "year": 2026,
+                "quarter": 1,
+                "predicted_revenue": 6.88624848732073
+            },
+            {
+                "date": "2026-06-30",
+                "year": 2026,
+                "quarter": 2,
+                "predicted_revenue": 4.333261279099395
+            },
+            {
+                "date": "2026-09-30",
+                "year": 2026,
+                "quarter": 3,
+                "predicted_revenue": 3.7850870905218628
+            },
+            {
+                "date": "2026-12-30",
+                "year": 2026,
+                "quarter": 4,
+                "predicted_revenue": 3.926535791944673
+            },
+            {
+                "date": "2027-03-30",
+                "year": 2027,
+                "quarter": 1,
+                "predicted_revenue": 5.152054082806386
+            },
+            {
+                "date": "2027-06-30",
+                "year": 2027,
+                "quarter": 2,
+                "predicted_revenue": 6.189723904779558
+            },
+            {
+                "date": "2027-09-30",
+                "year": 2027,
+                "quarter": 3,
+                "predicted_revenue": 6.133291210872847
+            },
+            {
+                "date": "2027-12-30",
+                "year": 2027,
+                "quarter": 4,
+                "predicted_revenue": 6.176193255442191
+            },
+            {
+                "date": "2028-03-30",
+                "year": 2028,
+                "quarter": 1,
+                "predicted_revenue": 6.675991902249944
+            },
+            {
+                "date": "2028-06-30",
+                "year": 2028,
+                "quarter": 2,
+                "predicted_revenue": 7.25432192900926
+            },
+            {
+                "date": "2028-09-30",
+                "year": 2028,
+                "quarter": 3,
+                "predicted_revenue": 7.910118586168297
+            },
+            {
+                "date": "2028-12-30",
+                "year": 2028,
+                "quarter": 4,
+                "predicted_revenue": 8.632211071668069
+            },
+            {
+                "date": "2029-03-30",
+                "year": 2029,
+                "quarter": 1,
+                "predicted_revenue": 7.286339896808741
+            },
+            {
+                "date": "2029-06-30",
+                "year": 2029,
+                "quarter": 2,
+                "predicted_revenue": 5.907211324989001
+            },
+            {
+                "date": "2029-09-30",
+                "year": 2029,
+                "quarter": 3,
+                "predicted_revenue": 5.617792735203961
+            },
+            {
+                "date": "2029-12-30",
+                "year": 2029,
+                "quarter": 4,
+                "predicted_revenue": 6.750916258017335
+            },
+            {
+                "date": "2030-03-30",
+                "year": 2030,
+                "quarter": 1,
+                "predicted_revenue": 7.100909485813567
+            },
+            {
+                "date": "2030-06-30",
+                "year": 2030,
+                "quarter": 2,
+                "predicted_revenue": 7.36216552019261
+            },
+            {
+                "date": "2030-09-30",
+                "year": 2030,
+                "quarter": 3,
+                "predicted_revenue": 7.6794353466328
+            },
+            {
+                "date": "2030-12-30",
+                "year": 2030,
+                "quarter": 4,
+                "predicted_revenue": 8.05717812177971
+            },
+            {
+                "date": "2031-03-30",
+                "year": 2031,
+                "quarter": 1,
+                "predicted_revenue": 6.777747585928884
+            },
+            {
+                "date": "2031-06-30",
+                "year": 2031,
+                "quarter": 2,
+                "predicted_revenue": 5.874528908492686
+            },
+            {
+                "date": "2031-09-30",
+                "year": 2031,
+                "quarter": 3,
+                "predicted_revenue": 6.23233420109807
+            },
+            {
+                "date": "2031-12-30",
+                "year": 2031,
+                "quarter": 4,
+                "predicted_revenue": 7.888552471477266
+            },
+            {
+                "date": "2032-03-30",
+                "year": 2032,
+                "quarter": 1,
+                "predicted_revenue": 6.8871230595437885
+            },
+            {
+                "date": "2032-06-30",
+                "year": 2032,
+                "quarter": 2,
+                "predicted_revenue": 6.059703952667209
+            },
+            {
+                "date": "2032-09-30",
+                "year": 2032,
+                "quarter": 3,
+                "predicted_revenue": 6.3805875658741735
+            },
+            {
+                "date": "2032-12-30",
+                "year": 2032,
+                "quarter": 4,
+                "predicted_revenue": 7.996957854819882
+            }
+        ],
+        "direction": "up"
+    },
+    "future_forecast_16q": {
+        "horizon_quarters": 16,
+        "selected_for_deployment": {
+            "model": "SVR log-target",
+            "scenario": "S3"
+        },
+        "forecast_points": [
+            {
+                "date": "2026-03-31",
+                "year": 2026,
+                "quarter": 1,
+                "predicted_revenue": 6.88624848732073
+            },
+            {
+                "date": "2026-06-30",
+                "year": 2026,
+                "quarter": 2,
+                "predicted_revenue": 4.333261279099395
+            },
+            {
+                "date": "2026-09-30",
+                "year": 2026,
+                "quarter": 3,
+                "predicted_revenue": 3.7850870905218628
+            },
+            {
+                "date": "2026-12-30",
+                "year": 2026,
+                "quarter": 4,
+                "predicted_revenue": 3.926535791944673
+            },
+            {
+                "date": "2027-03-30",
+                "year": 2027,
+                "quarter": 1,
+                "predicted_revenue": 5.152054082806386
+            },
+            {
+                "date": "2027-06-30",
+                "year": 2027,
+                "quarter": 2,
+                "predicted_revenue": 6.189723904779558
+            },
+            {
+                "date": "2027-09-30",
+                "year": 2027,
+                "quarter": 3,
+                "predicted_revenue": 6.133291210872847
+            },
+            {
+                "date": "2027-12-30",
+                "year": 2027,
+                "quarter": 4,
+                "predicted_revenue": 6.176193255442191
+            },
+            {
+                "date": "2028-03-30",
+                "year": 2028,
+                "quarter": 1,
+                "predicted_revenue": 6.675991902249944
+            },
+            {
+                "date": "2028-06-30",
+                "year": 2028,
+                "quarter": 2,
+                "predicted_revenue": 7.25432192900926
+            },
+            {
+                "date": "2028-09-30",
+                "year": 2028,
+                "quarter": 3,
+                "predicted_revenue": 7.910118586168297
+            },
+            {
+                "date": "2028-12-30",
+                "year": 2028,
+                "quarter": 4,
+                "predicted_revenue": 8.632211071668069
+            },
+            {
+                "date": "2029-03-30",
+                "year": 2029,
+                "quarter": 1,
+                "predicted_revenue": 7.286339896808741
+            },
+            {
+                "date": "2029-06-30",
+                "year": 2029,
+                "quarter": 2,
+                "predicted_revenue": 5.907211324989001
+            },
+            {
+                "date": "2029-09-30",
+                "year": 2029,
+                "quarter": 3,
+                "predicted_revenue": 5.617792735203961
+            },
+            {
+                "date": "2029-12-30",
+                "year": 2029,
+                "quarter": 4,
+                "predicted_revenue": 6.750916258017335
+            }
+        ],
+        "direction": "up",
+        "forecast_horizon_end": "2029-12-30"
+    },
+    "future_forecast_horizon_end": "2032-12-30",
+    "tuning_summary_rows": [
+        {
+            "model": "Linear Regression",
+            "params": {},
+            "MAE": 0.7799924005525868,
+            "RMSE": 1.0012775479391285,
+            "MAPE": 13.942376290263455,
+            "sMAPE": 14.154590580485305
+        },
+        {
+            "model": "Linear Regression log-target",
+            "params": {},
+            "MAE": 1.0727759607894818,
+            "RMSE": 1.280708108398264,
+            "MAPE": 20.05793600991063,
+            "sMAPE": 18.30223509848538
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.3022715740740738,
+            "RMSE": 1.3911123214666985,
+            "MAPE": 25.516160078264274,
+            "sMAPE": 30.614830642846574
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.3031312962962955,
+            "RMSE": 1.3923906070035301,
+            "MAPE": 25.529581972494288,
+            "sMAPE": 30.637132270235735
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.3031312962962958,
+            "RMSE": 1.3923906070035301,
+            "MAPE": 25.529581972494288,
+            "sMAPE": 30.637132270235735
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.3197153637566135,
+            "RMSE": 1.413784779846364,
+            "MAPE": 25.822636374384796,
+            "sMAPE": 30.98868926276917
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.32052203042328,
+            "RMSE": 1.4143710407183097,
+            "MAPE": 25.838313030222096,
+            "sMAPE": 31.012536660569186
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.32052203042328,
+            "RMSE": 1.4143710407183097,
+            "MAPE": 25.8383130302221,
+            "sMAPE": 31.012536660569197
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.327715459656085,
+            "RMSE": 1.4294142681070703,
+            "MAPE": 25.99805074169997,
+            "sMAPE": 31.33350986372157
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.328381431878307,
+            "RMSE": 1.4296201938315205,
+            "MAPE": 26.015562009747025,
+            "sMAPE": 31.357452345012334
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.328381431878307,
+            "RMSE": 1.4296201938315207,
+            "MAPE": 26.01556200974703,
+            "sMAPE": 31.357452345012348
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.340162303240741,
+            "RMSE": 1.4474306700179895,
+            "MAPE": 26.227424881473198,
+            "sMAPE": 31.633417375144592
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.340162303240741,
+            "RMSE": 1.4474306700179895,
+            "MAPE": 26.227424881473198,
+            "sMAPE": 31.633417375144592
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.3403442708333335,
+            "RMSE": 1.4481435747560332,
+            "MAPE": 26.226747328397426,
+            "sMAPE": 31.63344612887847
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.6914970803771843,
+            "RMSE": 1.7709581986037612,
+            "MAPE": 33.05203173593028,
+            "sMAPE": 41.55763452148206
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.6914970803771843,
+            "RMSE": 1.7709581986037612,
+            "MAPE": 33.05203173593028,
+            "sMAPE": 41.55763452148206
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.6914970803771847,
+            "RMSE": 1.7709581986037612,
+            "MAPE": 33.05203173593028,
+            "sMAPE": 41.557634521482065
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.6980367355695993,
+            "RMSE": 1.7841678799273417,
+            "MAPE": 33.14896151468171,
+            "sMAPE": 41.66207534903793
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.6980367355695993,
+            "RMSE": 1.7841678799273417,
+            "MAPE": 33.14896151468171,
+            "sMAPE": 41.66207534903793
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.6980367355696,
+            "RMSE": 1.7841678799273417,
+            "MAPE": 33.14896151468171,
+            "sMAPE": 41.662075349037934
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.757421820868175,
+            "RMSE": 1.834418126345561,
+            "MAPE": 34.39699415581261,
+            "sMAPE": 43.62432870518352
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.757421820868175,
+            "RMSE": 1.834418126345561,
+            "MAPE": 34.39699415581261,
+            "sMAPE": 43.62432870518353
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.7574218208681753,
+            "RMSE": 1.834418126345561,
+            "MAPE": 34.396994155812614,
+            "sMAPE": 43.62432870518353
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.7595726355569568,
+            "RMSE": 1.8428971509603038,
+            "MAPE": 34.42594274751316,
+            "sMAPE": 43.643099167225564
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.7595726355569568,
+            "RMSE": 1.8428971509603038,
+            "MAPE": 34.42594274751317,
+            "sMAPE": 43.64309916722558
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.7595726355569568,
+            "RMSE": 1.8428971509603038,
+            "MAPE": 34.42594274751317,
+            "sMAPE": 43.64309916722558
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.4667993752353639,
+            "RMSE": 1.5630228588418806,
+            "MAPE": 28.530847795415514,
+            "sMAPE": 34.44715056507389
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.4670692066592268,
+            "RMSE": 1.5633836736202957,
+            "MAPE": 28.5351757533272,
+            "sMAPE": 34.453915470845466
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.4670692066592264,
+            "RMSE": 1.5633836736202957,
+            "MAPE": 28.535175753327206,
+            "sMAPE": 34.453915470845466
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.4947667861669285,
+            "RMSE": 1.5888741291062871,
+            "MAPE": 29.029576024692393,
+            "sMAPE": 35.05939766203524
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.4947667861669292,
+            "RMSE": 1.5888741291062871,
+            "MAPE": 29.029576024692403,
+            "sMAPE": 35.05939766203525
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.4948100932813253,
+            "RMSE": 1.5889067001444017,
+            "MAPE": 29.03020889422521,
+            "sMAPE": 35.06018938283437
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.5429721067672209,
+            "RMSE": 1.6245612331412211,
+            "MAPE": 30.017677206916513,
+            "sMAPE": 36.43370317063015
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.5433793517577932,
+            "RMSE": 1.6248572969844972,
+            "MAPE": 30.027786523997715,
+            "sMAPE": 36.44805967151065
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.5433793517577932,
+            "RMSE": 1.6248572969844977,
+            "MAPE": 30.027786523997715,
+            "sMAPE": 36.448059671510656
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.55206840128507,
+            "RMSE": 1.6369966754540102,
+            "MAPE": 30.193833878287354,
+            "sMAPE": 36.676438805837144
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.5528214646031537,
+            "RMSE": 1.6376708038985865,
+            "MAPE": 30.208089726766758,
+            "sMAPE": 36.69685143586734
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.5528214646031542,
+            "RMSE": 1.6376708038985868,
+            "MAPE": 30.208089726766776,
+            "sMAPE": 36.69685143586735
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.95804035965831,
+            "RMSE": 2.021752050234331,
+            "MAPE": 37.876382739836124,
+            "sMAPE": 47.899695591936656
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.958040359658311,
+            "RMSE": 2.021752050234332,
+            "MAPE": 37.876382739836146,
+            "sMAPE": 47.89969559193668
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 1.9580403596583114,
+            "RMSE": 2.0217520502343316,
+            "MAPE": 37.87638273983615,
+            "sMAPE": 47.899695591936684
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.9741148591485391,
+            "RMSE": 2.0384410199891936,
+            "MAPE": 38.15855041975026,
+            "sMAPE": 48.25123423275489
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.9741148591485391,
+            "RMSE": 2.038441019989194,
+            "MAPE": 38.15855041975026,
+            "sMAPE": 48.2512342327549
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 1.9741148591485398,
+            "RMSE": 2.0384410199891945,
+            "MAPE": 38.15855041975028,
+            "sMAPE": 48.25123423275491
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.0399403082635152,
+            "RMSE": 2.0939526476850854,
+            "MAPE": 39.55949129785828,
+            "sMAPE": 50.55344515003255
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.0399403082635152,
+            "RMSE": 2.0939526476850854,
+            "MAPE": 39.55949129785828,
+            "sMAPE": 50.55344515003256
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.039940308263516,
+            "RMSE": 2.093952647685086,
+            "MAPE": 39.5594912978583,
+            "sMAPE": 50.553445150032566
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.0463660913594732,
+            "RMSE": 2.104697310565692,
+            "MAPE": 39.655958085648884,
+            "sMAPE": 50.64311999708619
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.0463660913594737,
+            "RMSE": 2.1046973105656925,
+            "MAPE": 39.6559580856489,
+            "sMAPE": 50.643119997086195
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.046366091359474,
+            "RMSE": 2.1046973105656934,
+            "MAPE": 39.655958085648905,
+            "sMAPE": 50.64311999708621
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0305485605690863,
+            "RMSE": 2.115150846867634,
+            "MAPE": 39.44680106540404,
+            "sMAPE": 51.48572371120806
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.033505436397347,
+            "RMSE": 2.117730814457179,
+            "MAPE": 39.502268816424326,
+            "sMAPE": 51.56800688619426
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0462916210937094,
+            "RMSE": 2.131725351069105,
+            "MAPE": 39.72016504210831,
+            "sMAPE": 51.83714909027422
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0491378226514856,
+            "RMSE": 2.13415693639199,
+            "MAPE": 39.773781103794725,
+            "sMAPE": 51.91711639422139
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0543992116437764,
+            "RMSE": 2.135916898912745,
+            "MAPE": 39.831687671211334,
+            "sMAPE": 52.000740144558456
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0577053553604876,
+            "RMSE": 2.138785057514068,
+            "MAPE": 39.893086017076236,
+            "sMAPE": 52.091217528838804
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0647428476954603,
+            "RMSE": 2.1466616294694885,
+            "MAPE": 40.01169716272789,
+            "sMAPE": 52.2327290190676
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.0676066178269337,
+            "RMSE": 2.149157938068546,
+            "MAPE": 40.065205544085806,
+            "sMAPE": 52.313648091213395
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1174272405684182,
+            "RMSE": 2.18609353858823,
+            "MAPE": 40.837742755611934,
+            "sMAPE": 53.28623836609366
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1174272405684182,
+            "RMSE": 2.18609353858823,
+            "MAPE": 40.837742755611934,
+            "sMAPE": 53.28623836609366
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1195820958674956,
+            "RMSE": 2.188000187604989,
+            "MAPE": 40.87744174730636,
+            "sMAPE": 53.345307427618195
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1195820958674956,
+            "RMSE": 2.188000187604989,
+            "MAPE": 40.87744174730636,
+            "sMAPE": 53.345307427618195
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1772336557534384,
+            "RMSE": 2.2407094456012895,
+            "MAPE": 41.8766231947737,
+            "sMAPE": 54.8779395977003
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.178993454969996,
+            "RMSE": 2.2423199537974567,
+            "MAPE": 41.90933650591909,
+            "sMAPE": 54.92764817787011
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.140052193644195,
+            "RMSE": 2.213585941559096,
+            "MAPE": 41.69265829065544,
+            "sMAPE": 55.25811447992205
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1580353787868347,
+            "RMSE": 2.229385625549132,
+            "MAPE": 41.85169046128005,
+            "sMAPE": 55.31472775553946
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1426650332129284,
+            "RMSE": 2.215948086847746,
+            "MAPE": 41.74148324798049,
+            "sMAPE": 55.33241215522515
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.160560810192753,
+            "RMSE": 2.2316625465449595,
+            "MAPE": 41.89938070385895,
+            "sMAPE": 55.387491789726916
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1114072484966475,
+            "RMSE": 2.1973365535099085,
+            "MAPE": 41.0640445146477,
+            "sMAPE": 54.10345207649343
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1114072484966475,
+            "RMSE": 2.1973365535099085,
+            "MAPE": 41.0640445146477,
+            "sMAPE": 54.10345207649343
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.115669365137722,
+            "RMSE": 2.2011289770591485,
+            "MAPE": 41.14438849079805,
+            "sMAPE": 54.223571086320895
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.115669365137722,
+            "RMSE": 2.2011289770591485,
+            "MAPE": 41.14438849079805,
+            "sMAPE": 54.223571086320895
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.132187918674808,
+            "RMSE": 2.2163271163984235,
+            "MAPE": 41.43257018656619,
+            "sMAPE": 54.58828843202406
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.1366617803860177,
+            "RMSE": 2.220312611324076,
+            "MAPE": 41.51639799254796,
+            "sMAPE": 54.716391967203926
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.299732175059013,
+            "RMSE": 2.3649918336605595,
+            "MAPE": 44.550760638935714,
+            "sMAPE": 59.29890731442603
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.299732175059013,
+            "RMSE": 2.3649918336605595,
+            "MAPE": 44.550760638935714,
+            "sMAPE": 59.29890731442603
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.299732175059013,
+            "RMSE": 2.3649918336605595,
+            "MAPE": 44.550760638935714,
+            "sMAPE": 59.29890731442603
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.3034867411083333,
+            "RMSE": 2.368431237551057,
+            "MAPE": 44.620961940617185,
+            "sMAPE": 59.40984274280987
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.3034867411083333,
+            "RMSE": 2.368431237551057,
+            "MAPE": 44.620961940617185,
+            "sMAPE": 59.40984274280987
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.3034867411083333,
+            "RMSE": 2.368431237551057,
+            "MAPE": 44.620961940617185,
+            "sMAPE": 59.40984274280987
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.8311908607143206,
+            "RMSE": 2.865941836141918,
+            "MAPE": 54.16880283340462,
+            "sMAPE": 75.21559046550044
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.8311908607143206,
+            "RMSE": 2.865941836141918,
+            "MAPE": 54.16880283340462,
+            "sMAPE": 75.21559046550044
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.8311908607143206,
+            "RMSE": 2.865941836141918,
+            "MAPE": 54.16880283340462,
+            "sMAPE": 75.21559046550044
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.8313791067794085,
+            "RMSE": 2.866116676161235,
+            "MAPE": 54.1722113543959,
+            "sMAPE": 75.22104522214349
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.8313791067794085,
+            "RMSE": 2.866116676161235,
+            "MAPE": 54.1722113543959,
+            "sMAPE": 75.22104522214349
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.8313791067794085,
+            "RMSE": 2.866116676161235,
+            "MAPE": 54.1722113543959,
+            "sMAPE": 75.22104522214349
+        },
+        {
+            "model": "Linear Regression",
+            "params": {},
+            "MAE": 1.697833633414446,
+            "RMSE": 2.4499807661263366,
+            "MAPE": 29.150977992498504,
+            "sMAPE": 43.625107060541815
+        },
+        {
+            "model": "Linear Regression log-target",
+            "params": {},
+            "MAE": 4.416580334646539,
+            "RMSE": 5.792195797105671,
+            "MAPE": 76.11977781004873,
+            "sMAPE": 49.620208574927524
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.152110462962963,
+            "RMSE": 2.246324871296314,
+            "MAPE": 36.88694724350242,
+            "sMAPE": 45.74980627848038
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.152110462962964,
+            "RMSE": 2.2463248712963146,
+            "MAPE": 36.88694724350243,
+            "sMAPE": 45.749806278480406
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.1528607638888895,
+            "RMSE": 2.2454461842184816,
+            "MAPE": 36.91109395981817,
+            "sMAPE": 45.77570969585455
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.1528607638888895,
+            "RMSE": 2.2454461842184816,
+            "MAPE": 36.91109395981817,
+            "sMAPE": 45.77570969585455
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.1548812962962973,
+            "RMSE": 2.2483154363186664,
+            "MAPE": 36.94091474783532,
+            "sMAPE": 45.823500607654125
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.1548218750000006,
+            "RMSE": 2.247652135441883,
+            "MAPE": 36.94358909408047,
+            "sMAPE": 45.82813191960482
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.1687442609126992,
+            "RMSE": 2.259828653590156,
+            "MAPE": 37.197316398268065,
+            "sMAPE": 46.19334730494087
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.1687442609126997,
+            "RMSE": 2.259828653590156,
+            "MAPE": 37.19731639826807,
+            "sMAPE": 46.19334730494087
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.1712220386904773,
+            "RMSE": 2.2623383064049016,
+            "MAPE": 37.24043218319928,
+            "sMAPE": 46.26009114454417
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.1726833763227513,
+            "RMSE": 2.2655591994339814,
+            "MAPE": 37.25365874150367,
+            "sMAPE": 46.294598431251664
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.1726833763227518,
+            "RMSE": 2.2655591994339814,
+            "MAPE": 37.25365874150367,
+            "sMAPE": 46.294598431251664
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.1747316402116397,
+            "RMSE": 2.267267770233301,
+            "MAPE": 37.291950706684155,
+            "sMAPE": 46.34985766238617
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.615266764023015,
+            "RMSE": 2.6904338612412024,
+            "MAPE": 45.118060479363386,
+            "sMAPE": 58.69632574150398
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.615266764023015,
+            "RMSE": 2.6904338612412033,
+            "MAPE": 45.1180604793634,
+            "sMAPE": 58.696325741504
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.6152667640230156,
+            "RMSE": 2.6904338612412033,
+            "MAPE": 45.1180604793634,
+            "sMAPE": 58.696325741504005
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.6182927434602417,
+            "RMSE": 2.693273666004254,
+            "MAPE": 45.17271071627938,
+            "sMAPE": 58.78410505836538
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.618292743460242,
+            "RMSE": 2.6932736660042544,
+            "MAPE": 45.17271071627938,
+            "sMAPE": 58.78410505836538
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.618292743460242,
+            "RMSE": 2.693273666004255,
+            "MAPE": 45.17271071627938,
+            "sMAPE": 58.78410505836539
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.6457826451557707,
+            "RMSE": 2.7219265135390383,
+            "MAPE": 45.64627238140091,
+            "sMAPE": 59.600239674751656
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.6457826451557707,
+            "RMSE": 2.7219265135390383,
+            "MAPE": 45.64627238140092,
+            "sMAPE": 59.60023967475166
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.645782645155771,
+            "RMSE": 2.7219265135390383,
+            "MAPE": 45.64627238140092,
+            "sMAPE": 59.60023967475166
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.66493191628973,
+            "RMSE": 2.740983374594011,
+            "MAPE": 45.981772591286976,
+            "sMAPE": 60.16497345081765
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.66493191628973,
+            "RMSE": 2.740983374594011,
+            "MAPE": 45.981772591286976,
+            "sMAPE": 60.16497345081765
+        },
+        {
+            "model": "Random Forest",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.66493191628973,
+            "RMSE": 2.740983374594011,
+            "MAPE": 45.981772591286976,
+            "sMAPE": 60.16497345081766
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.245022091151321,
+            "RMSE": 2.338764786462596,
+            "MAPE": 38.512630054905294,
+            "sMAPE": 48.248062672661774
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.2450220911513212,
+            "RMSE": 2.3387647864625962,
+            "MAPE": 38.51263005490531,
+            "sMAPE": 48.248062672661796
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.2465100840343464,
+            "RMSE": 2.34043688219919,
+            "MAPE": 38.53716577705662,
+            "sMAPE": 48.28841132175646
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.246578465373248,
+            "RMSE": 2.339178545573472,
+            "MAPE": 38.54671370088374,
+            "sMAPE": 48.28882549864233
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.246578465373249,
+            "RMSE": 2.3391785455734726,
+            "MAPE": 38.54671370088376,
+            "sMAPE": 48.28882549864235
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.2478136870732017,
+            "RMSE": 2.34058933955341,
+            "MAPE": 38.56704693047712,
+            "sMAPE": 48.32233470812369
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.3472911812166104,
+            "RMSE": 2.4489528313031292,
+            "MAPE": 40.24627030473996,
+            "sMAPE": 51.04538565246437
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.347291181216611,
+            "RMSE": 2.44895283130313,
+            "MAPE": 40.24627030473996,
+            "sMAPE": 51.04538565246437
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.347372230937409,
+            "RMSE": 2.4486830798383195,
+            "MAPE": 40.250234714848666,
+            "sMAPE": 51.04779883549519
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.362176586381132,
+            "RMSE": 2.4625300806857333,
+            "MAPE": 40.51460544383063,
+            "sMAPE": 51.46025405725049
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.362176586381133,
+            "RMSE": 2.4625300806857338,
+            "MAPE": 40.51460544383064,
+            "sMAPE": 51.460254057250495
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 2,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.3643808771241175,
+            "RMSE": 2.46421750848389,
+            "MAPE": 40.55685470201597,
+            "sMAPE": 51.5211868037264
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.7651911465755936,
+            "RMSE": 2.839439574797111,
+            "MAPE": 47.751882169505265,
+            "sMAPE": 63.18556130527355
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.765191146575594,
+            "RMSE": 2.839439574797111,
+            "MAPE": 47.75188216950528,
+            "sMAPE": 63.185561305273566
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.7651911465755945,
+            "RMSE": 2.8394395747971113,
+            "MAPE": 47.751882169505286,
+            "sMAPE": 63.18556130527359
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.765490369571349,
+            "RMSE": 2.839278214159728,
+            "MAPE": 47.762326215393685,
+            "sMAPE": 63.20330610083009
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.7654903695713493,
+            "RMSE": 2.8392782141597284,
+            "MAPE": 47.762326215393685,
+            "sMAPE": 63.203306100830105
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": "sqrt",
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.76549036957135,
+            "RMSE": 2.839278214159729,
+            "MAPE": 47.7623262153937,
+            "sMAPE": 63.20330610083011
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.787136197818815,
+            "RMSE": 2.866808543756492,
+            "MAPE": 48.094565857650956,
+            "sMAPE": 63.84777393775076
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.787136197818815,
+            "RMSE": 2.866808543756492,
+            "MAPE": 48.094565857650956,
+            "sMAPE": 63.84777393775076
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 600
+            },
+            "MAE": 2.787136197818816,
+            "RMSE": 2.8668085437564925,
+            "MAPE": 48.09456585765098,
+            "sMAPE": 63.84777393775079
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 8,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.7957153422271066,
+            "RMSE": 2.8773704640500912,
+            "MAPE": 48.23036085850159,
+            "sMAPE": 64.11550298654117
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": 4,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.7957153422271066,
+            "RMSE": 2.8773704640500917,
+            "MAPE": 48.2303608585016,
+            "sMAPE": 64.11550298654119
+        },
+        {
+            "model": "Random Forest log-target",
+            "params": {
+                "model__max_depth": null,
+                "model__max_features": 0.8,
+                "model__min_samples_leaf": 4,
+                "model__n_estimators": 300
+            },
+            "MAE": 2.7957153422271075,
+            "RMSE": 2.877370464050092,
+            "MAPE": 48.23036085850161,
+            "sMAPE": 64.1155029865412
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.884247314471374,
+            "RMSE": 3.018824745492627,
+            "MAPE": 49.39394901640712,
+            "sMAPE": 66.99048900784615
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.884247314471374,
+            "RMSE": 3.018824745492627,
+            "MAPE": 49.39394901640712,
+            "sMAPE": 66.99048900784615
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9158503657207673,
+            "RMSE": 3.0561177731361435,
+            "MAPE": 49.911369961381794,
+            "sMAPE": 68.02764032909018
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9158503657207673,
+            "RMSE": 3.0561177731361435,
+            "MAPE": 49.911369961381794,
+            "sMAPE": 68.02764032909018
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9202627889923902,
+            "RMSE": 3.0500612346915337,
+            "MAPE": 50.049307926174635,
+            "sMAPE": 68.09472439557727
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9202627889923902,
+            "RMSE": 3.0500612346915337,
+            "MAPE": 50.049307926174635,
+            "sMAPE": 68.09472439557727
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9300687486575443,
+            "RMSE": 3.0438223582405093,
+            "MAPE": 50.3275353533973,
+            "sMAPE": 68.33387313643576
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9300687486575443,
+            "RMSE": 3.0438223582405093,
+            "MAPE": 50.3275353533973,
+            "sMAPE": 68.33387313643576
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.94987933275924,
+            "RMSE": 3.0847549778409666,
+            "MAPE": 50.53468610205589,
+            "sMAPE": 69.06986676272439
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.94987933275924,
+            "RMSE": 3.0847549778409666,
+            "MAPE": 50.53468610205589,
+            "sMAPE": 69.06986676272439
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.956702839573519,
+            "RMSE": 3.067142910262897,
+            "MAPE": 50.81383127369382,
+            "sMAPE": 69.16324069283199
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.956702839573519,
+            "RMSE": 3.067142910262897,
+            "MAPE": 50.81383127369382,
+            "sMAPE": 69.16324069283199
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.9737088230064104,
+            "RMSE": 3.080220579875057,
+            "MAPE": 51.14042315044187,
+            "sMAPE": 69.69798666585237
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 2.998136921747264,
+            "RMSE": 3.101738687924906,
+            "MAPE": 51.58680220825874,
+            "sMAPE": 70.46847590281331
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.023434193134831,
+            "RMSE": 3.1324996309027897,
+            "MAPE": 51.99187899975816,
+            "sMAPE": 71.31252176341023
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.0530403162769355,
+            "RMSE": 3.162364647322866,
+            "MAPE": 52.50768253893838,
+            "sMAPE": 72.27842660822772
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.0571263183523176,
+            "RMSE": 3.162288065209614,
+            "MAPE": 52.60695383817758,
+            "sMAPE": 72.38926768993473
+        },
+        {
+            "model": "SVR",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.088754244204656,
+            "RMSE": 3.1938611324916204,
+            "MAPE": 53.160415523535995,
+            "sMAPE": 73.4275168768398
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.0306707584721244,
+            "RMSE": 3.1617614454928393,
+            "MAPE": 51.98612779514535,
+            "sMAPE": 71.73770458499438
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.031039784456973,
+            "RMSE": 3.162184070314004,
+            "MAPE": 51.99225970799053,
+            "sMAPE": 71.75021059291002
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.031039784456973,
+            "RMSE": 3.162184070314004,
+            "MAPE": 51.99225970799053,
+            "sMAPE": 71.75021059291002
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.072580042853427,
+            "RMSE": 3.199644944925781,
+            "MAPE": 52.73891392295044,
+            "sMAPE": 73.06943117586266
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.072580042853427,
+            "RMSE": 3.199644944925781,
+            "MAPE": 52.73891392295044,
+            "sMAPE": 73.06943117586266
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.01,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.072580042853427,
+            "RMSE": 3.199644944925781,
+            "MAPE": 52.73891392295044,
+            "sMAPE": 73.06943117586266
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.1029016107797487,
+            "RMSE": 3.2114902121093185,
+            "MAPE": 53.3925905169348,
+            "sMAPE": 73.9621259724338
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.1029016107797487,
+            "RMSE": 3.2114902121093185,
+            "MAPE": 53.3925905169348,
+            "sMAPE": 73.9621259724338
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.1029016107797487,
+            "RMSE": 3.2114902121093185,
+            "MAPE": 53.3925905169348,
+            "sMAPE": 73.9621259724338
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.1396330957005425,
+            "RMSE": 3.2455758120142146,
+            "MAPE": 54.05097747433763,
+            "sMAPE": 75.15971876915684
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.1396330957005425,
+            "RMSE": 3.2455758120142146,
+            "MAPE": 54.05097747433763,
+            "sMAPE": 75.15971876915684
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.1,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.1396330957005425,
+            "RMSE": 3.2455758120142146,
+            "MAPE": 54.05097747433763,
+            "sMAPE": 75.15971876915684
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.495365747080721,
+            "RMSE": 3.549729807445232,
+            "MAPE": 60.744301577679884,
+            "sMAPE": 87.52065585747096
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 1,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.495365747080721,
+            "RMSE": 3.549729807445232,
+            "MAPE": 60.744301577679884,
+            "sMAPE": 87.52065585747096
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.495365747080721,
+            "RMSE": 3.549729807445232,
+            "MAPE": 60.744301577679884,
+            "sMAPE": 87.52065585747096
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 10,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.495365747080721,
+            "RMSE": 3.549729807445232,
+            "MAPE": 60.744301577679884,
+            "sMAPE": 87.52065585747096
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "scale",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.495365747080721,
+            "RMSE": 3.549729807445232,
+            "MAPE": 60.744301577679884,
+            "sMAPE": 87.52065585747096
+        },
+        {
+            "model": "SVR log-target",
+            "params": {
+                "model__C": 100,
+                "model__epsilon": 0.5,
+                "model__gamma": "auto",
+                "model__kernel": "rbf"
+            },
+            "MAE": 3.495365747080721,
+            "RMSE": 3.549729807445232,
+            "MAPE": 60.744301577679884,
+            "sMAPE": 87.52065585747096
+        }
+    ]
+}

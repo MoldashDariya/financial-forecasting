@@ -1,0 +1,188 @@
+{
+    "company": "peloton",
+    "rows_used": 28,
+    "test_size": 7,
+    "macro_features_used": [
+        "CPI_lag1",
+        "DGS10_lag1",
+        "BRENT_lag1",
+        "NASDAQ_lag1",
+        "SP500_lag1"
+    ],
+    "best_model_for_this_company": "XGBoost",
+    "top_3_models_for_this_company": [
+        {
+            "rank": 1,
+            "model": "XGBoost",
+            "MAPE": 5.161869246178497,
+            "RMSE": 0.04831861829343065,
+            "MAE": 0.03569864409310478,
+            "sMAPE": 5.402387532612053
+        },
+        {
+            "rank": 2,
+            "model": "SVR",
+            "MAPE": 6.195331174668506,
+            "RMSE": 0.05051925882769773,
+            "MAE": 0.04048354832004662,
+            "sMAPE": 6.117838841895564
+        },
+        {
+            "rank": 3,
+            "model": "Random Forest",
+            "MAPE": 6.682531618989003,
+            "RMSE": 0.04677792702900882,
+            "MAE": 0.04321910843125092,
+            "sMAPE": 6.567131393926566
+        }
+    ],
+    "all_metrics": {
+        "Linear Regression": {
+            "MAE": 0.31401568626053217,
+            "RMSE": 0.324627818516941,
+            "MAPE": 48.879102735136655,
+            "sMAPE": 67.47778210491389
+        },
+        "Random Forest": {
+            "MAE": 0.04321910843125092,
+            "RMSE": 0.04677792702900882,
+            "MAPE": 6.682531618989003,
+            "sMAPE": 6.567131393926566
+        },
+        "SVR": {
+            "MAE": 0.04048354832004662,
+            "RMSE": 0.05051925882769773,
+            "MAPE": 6.195331174668506,
+            "sMAPE": 6.117838841895564
+        },
+        "XGBoost": {
+            "MAE": 0.03569864409310478,
+            "RMSE": 0.04831861829343065,
+            "MAPE": 5.161869246178497,
+            "sMAPE": 5.402387532612053
+        }
+    },
+    "future_forecast_steps": 8,
+    "future_forecast_preview": [
+        {
+            "company": "peloton",
+            "date": "2025-09-30",
+            "year": 2025,
+            "quarter": 3,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6183350086212158,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2025-12-30",
+            "year": 2025,
+            "quarter": 4,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6287770867347717,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-03-30",
+            "year": 2026,
+            "quarter": 1,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6166911721229553,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-06-30",
+            "year": 2026,
+            "quarter": 2,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6160491704940796,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-09-30",
+            "year": 2026,
+            "quarter": 3,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6189340353012085,
+            "revenue_unit": "billion USD"
+        }
+    ],
+    "future_forecast_full": [
+        {
+            "company": "peloton",
+            "date": "2025-09-30",
+            "year": 2025,
+            "quarter": 3,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6183350086212158,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2025-12-30",
+            "year": 2025,
+            "quarter": 4,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6287770867347717,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-03-30",
+            "year": 2026,
+            "quarter": 1,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6166911721229553,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-06-30",
+            "year": 2026,
+            "quarter": 2,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6160491704940796,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-09-30",
+            "year": 2026,
+            "quarter": 3,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6189340353012085,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2026-12-30",
+            "year": 2026,
+            "quarter": 4,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6282106637954712,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2027-03-30",
+            "year": 2027,
+            "quarter": 1,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6166911721229553,
+            "revenue_unit": "billion USD"
+        },
+        {
+            "company": "peloton",
+            "date": "2027-06-30",
+            "year": 2027,
+            "quarter": 2,
+            "model": "XGBoost",
+            "predicted_revenue": 0.6160491704940796,
+            "revenue_unit": "billion USD"
+        }
+    ],
+    "revenue_unit": "billion USD"
+}

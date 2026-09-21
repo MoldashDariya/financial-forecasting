@@ -1,0 +1,98 @@
+[
+    {
+        "date": "2026-03-31",
+        "year": 2026,
+        "quarter": 1,
+        "predicted_revenue": 187.83146334496243
+    },
+    {
+        "date": "2026-06-30",
+        "year": 2026,
+        "quarter": 2,
+        "predicted_revenue": 193.55556314581423
+    },
+    {
+        "date": "2026-09-30",
+        "year": 2026,
+        "quarter": 3,
+        "predicted_revenue": 197.95005914702114
+    },
+    {
+        "date": "2026-12-31",
+        "year": 2026,
+        "quarter": 4,
+        "predicted_revenue": 229.2304063551113
+    },
+    {
+        "date": "2027-03-31",
+        "year": 2027,
+        "quarter": 1,
+        "predicted_revenue": 206.45779438372654
+    },
+    {
+        "date": "2027-06-30",
+        "year": 2027,
+        "quarter": 2,
+        "predicted_revenue": 214.10896593152785
+    },
+    {
+        "date": "2027-09-30",
+        "year": 2027,
+        "quarter": 3,
+        "predicted_revenue": 215.15295088043598
+    },
+    {
+        "date": "2027-12-31",
+        "year": 2027,
+        "quarter": 4,
+        "predicted_revenue": 241.39855750714395
+    },
+    {
+        "date": "2028-03-31",
+        "year": 2028,
+        "quarter": 1,
+        "predicted_revenue": 216.36828013329716
+    },
+    {
+        "date": "2028-06-30",
+        "year": 2028,
+        "quarter": 2,
+        "predicted_revenue": 227.81621372238692
+    },
+    {
+        "date": "2028-09-30",
+        "year": 2028,
+        "quarter": 3,
+        "predicted_revenue": 231.45407642526658
+    },
+    {
+        "date": "2028-12-31",
+        "year": 2028,
+        "quarter": 4,
+        "predicted_revenue": 256.59860077173323
+    },
+    {
+        "date": "2029-03-31",
+        "year": 2029,
+        "quarter": 1,
+        "predicted_revenue": 228.63959954360098
+    },
+    {
+        "date": "2029-06-30",
+        "year": 2029,
+        "quarter": 2,
+        "predicted_revenue": 240.97530113098287
+    },
+    {
+        "date": "2029-09-30",
+        "year": 2029,
+        "quarter": 3,
+        "predicted_revenue": 247.80778747119348
+    },
+    {
+        "date": "2029-12-31",
+        "year": 2029,
+        "quarter": 4,
+        "predicted_revenue": 275.37730921135136
+    }
+]

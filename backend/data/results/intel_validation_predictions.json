@@ -1,0 +1,898 @@
+[
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 14.336758468944195,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 12.079980166190714,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 13.943601908130798,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 13.209443589637404,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 13.76991540773663,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 12.587942484363793,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 13.948420405960132,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 13.973580237472337,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 14.102644602233807,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 13.252552605395435,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 13.858408025222213,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 14.237070330366738,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 13.411756570715974,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 13.130938748290717,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 13.685489571743796,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 14.371255353168369,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 14.691631961678612,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 13.518816754198916,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 14.528396102388571,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 15.202754748897428,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 12.743537566196633,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 13.384338692339753,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 13.73823550802181,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 15.172679552484858,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 14.648580670663748,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 12.255072540355314,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 13.83312626020888,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 13.010050960195661,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 13.936351539806775,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 12.616348393457093,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 13.978462768615302,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Linear Regression log-target",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 13.9280040388504,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 13.95036360378743,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 13.32127803425432,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 13.798507739571994,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 14.208306052288664,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 13.359387617635413,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 13.143074185617927,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 13.672159454067062,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "Random Forest log-target",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 14.396817197465957,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 13.776876198375147,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 13.022159183450244,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 13.909246455735184,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 14.824707563721676,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 12.833286880517091,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 13.117945372546256,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 13.661550213015122,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S1",
+        "model": "SVR log-target",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 14.962596036295682,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2021-03-27",
+        "actual": 19.67,
+        "predicted": 23.220628956205356,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2021-06-26",
+        "actual": 19.63,
+        "predicted": 22.05525302972466,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2021-09-25",
+        "actual": 19.19,
+        "predicted": 23.195864117720507,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2021-12-25",
+        "actual": 20.53,
+        "predicted": 25.325781147257562,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2022-04-02",
+        "actual": 18.35,
+        "predicted": 28.72218841041989,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2022-07-02",
+        "actual": 15.32,
+        "predicted": 29.69976277660048,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 43.052932660248366,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 47.827132274635595,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2021-03-27",
+        "actual": 19.67,
+        "predicted": 19.39219490740741,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2021-06-26",
+        "actual": 19.63,
+        "predicted": 19.32408667989417,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2021-09-25",
+        "actual": 19.19,
+        "predicted": 19.172614775132274,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2021-12-25",
+        "actual": 20.53,
+        "predicted": 19.45683445767195,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2022-04-02",
+        "actual": 18.35,
+        "predicted": 19.196159589947094,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2022-07-02",
+        "actual": 15.32,
+        "predicted": 18.958267764550257,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 16.988844126984112,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 16.870821626984117,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2021-03-27",
+        "actual": 19.67,
+        "predicted": 18.67622310213151,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2021-06-26",
+        "actual": 19.63,
+        "predicted": 18.417455298834007,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2021-09-25",
+        "actual": 19.19,
+        "predicted": 17.909211875781157,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2021-12-25",
+        "actual": 20.53,
+        "predicted": 17.623792318599456,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2022-04-02",
+        "actual": 18.35,
+        "predicted": 17.113144419875216,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2022-07-02",
+        "actual": 15.32,
+        "predicted": 16.93811022176706,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 16.220234679457597,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 16.221594866186997,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2021-03-27",
+        "actual": 19.67,
+        "predicted": 22.454051353872202,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2021-06-26",
+        "actual": 19.63,
+        "predicted": 21.78789022004755,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2021-09-25",
+        "actual": 19.19,
+        "predicted": 23.876459282492878,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2021-12-25",
+        "actual": 20.53,
+        "predicted": 26.89263097279177,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2022-04-02",
+        "actual": 18.35,
+        "predicted": 32.34810112386294,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2022-07-02",
+        "actual": 15.32,
+        "predicted": 38.196613079754286,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 67.77045987566036,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Linear Regression log-target",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 88.5398246504615,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2021-03-27",
+        "actual": 19.67,
+        "predicted": 19.336809500011913,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2021-06-26",
+        "actual": 19.63,
+        "predicted": 19.338294899996214,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2021-09-25",
+        "actual": 19.19,
+        "predicted": 19.097009734922466,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2021-12-25",
+        "actual": 20.53,
+        "predicted": 19.377564213913807,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2022-04-02",
+        "actual": 18.35,
+        "predicted": 19.104864956914433,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2022-07-02",
+        "actual": 15.32,
+        "predicted": 18.863827512326345,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 15.934742754942596,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "Random Forest log-target",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 15.867529655018721,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2021-03-27",
+        "actual": 19.67,
+        "predicted": 18.442495085309393,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2021-06-26",
+        "actual": 19.63,
+        "predicted": 18.080990787313727,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2021-09-25",
+        "actual": 19.19,
+        "predicted": 17.69688078325376,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2021-12-25",
+        "actual": 20.53,
+        "predicted": 17.300112977514363,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2022-04-02",
+        "actual": 18.35,
+        "predicted": 16.788201473492986,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2022-07-02",
+        "actual": 15.32,
+        "predicted": 16.6173030634708,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 15.841782573174626,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "S3",
+        "model": "SVR log-target",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 15.842962874170478,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 15.715233705137313,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 15.614530354172057,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 15.647754617171026,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 15.63679319790102,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 15.640409612580154,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 15.639216477383945,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 15.63961011907682,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 15.639480247975154,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-03-30",
+        "actual": 12.72,
+        "predicted": 15.715233705137313,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-06-29",
+        "actual": 12.83,
+        "predicted": 15.614530354172057,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-09-28",
+        "actual": 13.28,
+        "predicted": 15.647754617171026,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2024-12-28",
+        "actual": 14.26,
+        "predicted": 15.63679319790102,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-03-29",
+        "actual": 12.67,
+        "predicted": 15.640409612580154,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-06-28",
+        "actual": 12.86,
+        "predicted": 15.639216477383945,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-09-27",
+        "actual": 13.65,
+        "predicted": 15.63961011907682,
+        "split": "last_8q"
+    },
+    {
+        "scenario": "TS",
+        "model": "ARIMA",
+        "date": "2025-12-27",
+        "actual": 13.67,
+        "predicted": 15.639480247975154,
+        "split": "last_8q"
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "date": "2026-03-31",
+        "year": 2026,
+        "quarter": 1,
+        "predicted_revenue": 79.35052432592127
+    },
+    {
+        "date": "2026-06-30",
+        "year": 2026,
+        "quarter": 2,
+        "predicted_revenue": 86.33848528605483
+    },
+    {
+        "date": "2026-09-30",
+        "year": 2026,
+        "quarter": 3,
+        "predicted_revenue": 86.91071124804837
+    },
+    {
+        "date": "2026-12-30",
+        "year": 2026,
+        "quarter": 4,
+        "predicted_revenue": 86.96487084223874
+    },
+    {
+        "date": "2027-03-30",
+        "year": 2027,
+        "quarter": 1,
+        "predicted_revenue": 89.00067854094372
+    },
+    {
+        "date": "2027-06-30",
+        "year": 2027,
+        "quarter": 2,
+        "predicted_revenue": 89.50971958836256
+    },
+    {
+        "date": "2027-09-30",
+        "year": 2027,
+        "quarter": 3,
+        "predicted_revenue": 89.38444092822184
+    },
+    {
+        "date": "2027-12-30",
+        "year": 2027,
+        "quarter": 4,
+        "predicted_revenue": 88.9914032477812
+    },
+    {
+        "date": "2028-03-30",
+        "year": 2028,
+        "quarter": 1,
+        "predicted_revenue": 88.99006762558734
+    },
+    {
+        "date": "2028-06-30",
+        "year": 2028,
+        "quarter": 2,
+        "predicted_revenue": 89.45701012730942
+    },
+    {
+        "date": "2028-09-30",
+        "year": 2028,
+        "quarter": 3,
+        "predicted_revenue": 89.3553105133453
+    },
+    {
+        "date": "2028-12-30",
+        "year": 2028,
+        "quarter": 4,
+        "predicted_revenue": 88.93897230353821
+    },
+    {
+        "date": "2029-03-30",
+        "year": 2029,
+        "quarter": 1,
+        "predicted_revenue": 88.92410360801527
+    },
+    {
+        "date": "2029-06-30",
+        "year": 2029,
+        "quarter": 2,
+        "predicted_revenue": 89.4278563248902
+    },
+    {
+        "date": "2029-09-30",
+        "year": 2029,
+        "quarter": 3,
+        "predicted_revenue": 89.3553105133453
+    },
+    {
+        "date": "2029-12-30",
+        "year": 2029,
+        "quarter": 4,
+        "predicted_revenue": 88.92328458373338
+    },
+    {
+        "date": "2030-03-30",
+        "year": 2030,
+        "quarter": 1,
+        "predicted_revenue": 88.92410360801527
+    },
+    {
+        "date": "2030-06-30",
+        "year": 2030,
+        "quarter": 2,
+        "predicted_revenue": 89.4278563248902
+    },
+    {
+        "date": "2030-09-30",
+        "year": 2030,
+        "quarter": 3,
+        "predicted_revenue": 89.3553105133453
+    },
+    {
+        "date": "2030-12-30",
+        "year": 2030,
+        "quarter": 4,
+        "predicted_revenue": 88.92328458373338
+    },
+    {
+        "date": "2031-03-30",
+        "year": 2031,
+        "quarter": 1,
+        "predicted_revenue": 88.92410360801527
+    },
+    {
+        "date": "2031-06-30",
+        "year": 2031,
+        "quarter": 2,
+        "predicted_revenue": 89.4278563248902
+    },
+    {
+        "date": "2031-09-30",
+        "year": 2031,
+        "quarter": 3,
+        "predicted_revenue": 89.3553105133453
+    },
+    {
+        "date": "2031-12-30",
+        "year": 2031,
+        "quarter": 4,
+        "predicted_revenue": 88.92328458373338
+    },
+    {
+        "date": "2032-03-30",
+        "year": 2032,
+        "quarter": 1,
+        "predicted_revenue": 88.92410360801512
+    },
+    {
+        "date": "2032-06-30",
+        "year": 2032,
+        "quarter": 2,
+        "predicted_revenue": 89.4278563248902
+    },
+    {
+        "date": "2032-09-30",
+        "year": 2032,
+        "quarter": 3,
+        "predicted_revenue": 89.3553105133453
+    },
+    {
+        "date": "2032-12-30",
+        "year": 2032,
+        "quarter": 4,
+        "predicted_revenue": 88.92328458373338
+    }
+]

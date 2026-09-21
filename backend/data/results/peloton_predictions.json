@@ -1,0 +1,198 @@
+[
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2023-12-31",
+        "actual": 0.74,
+        "predicted": 0.523362617209662
+    },
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2024-03-31",
+        "actual": 0.72,
+        "predicted": 0.5068136619985497
+    },
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2024-06-30",
+        "actual": 0.64,
+        "predicted": 0.3769360613690216
+    },
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2024-09-30",
+        "actual": 0.59,
+        "predicted": 0.2753154146052732
+    },
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2024-12-31",
+        "actual": 0.67,
+        "predicted": 0.3054149683048826
+    },
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2025-03-31",
+        "actual": 0.62,
+        "predicted": 0.24608980498288724
+    },
+    {
+        "company": "peloton",
+        "model": "Linear Regression",
+        "date": "2025-06-30",
+        "actual": 0.61,
+        "predicted": 0.15795766770599862
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2023-12-31",
+        "actual": 0.74,
+        "predicted": 0.6924543746993732
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2024-03-31",
+        "actual": 0.72,
+        "predicted": 0.6655952080327068
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2024-06-30",
+        "actual": 0.64,
+        "predicted": 0.6660580651755639
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2024-09-30",
+        "actual": 0.59,
+        "predicted": 0.6569602080327069
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2024-12-31",
+        "actual": 0.67,
+        "predicted": 0.6794135413660403
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2025-03-31",
+        "actual": 0.62,
+        "predicted": 0.6652952080327074
+    },
+    {
+        "company": "peloton",
+        "model": "Random Forest",
+        "date": "2025-06-30",
+        "actual": 0.61,
+        "predicted": 0.662856319143818
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2023-12-31",
+        "actual": 0.74,
+        "predicted": 0.6557536476735697
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2024-03-31",
+        "actual": 0.72,
+        "predicted": 0.6954445232796815
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2024-06-30",
+        "actual": 0.64,
+        "predicted": 0.642430172706504
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2024-09-30",
+        "actual": 0.59,
+        "predicted": 0.6266560182892167
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2024-12-31",
+        "actual": 0.67,
+        "predicted": 0.6668861576692229
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2025-03-31",
+        "actual": 0.62,
+        "predicted": 0.6908314065886784
+    },
+    {
+        "company": "peloton",
+        "model": "SVR",
+        "date": "2025-06-30",
+        "actual": 0.61,
+        "predicted": 0.6715515692784013
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2023-12-31",
+        "actual": 0.74,
+        "predicted": 0.6927495002746582
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2024-03-31",
+        "actual": 0.72,
+        "predicted": 0.6174716353416443
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2024-06-30",
+        "actual": 0.64,
+        "predicted": 0.6087274551391602
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2024-09-30",
+        "actual": 0.59,
+        "predicted": 0.6030265092849731
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2024-12-31",
+        "actual": 0.67,
+        "predicted": 0.620782732963562
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2025-03-31",
+        "actual": 0.62,
+        "predicted": 0.6149140000343323
+    },
+    {
+        "company": "peloton",
+        "model": "XGBoost",
+        "date": "2025-06-30",
+        "actual": 0.61,
+        "predicted": 0.6115093231201172
+    }
+]

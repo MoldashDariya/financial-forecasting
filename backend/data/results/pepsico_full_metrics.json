@@ -1,0 +1,3015 @@
+{
+    "company": "pepsico",
+    "runtime_profile": "full",
+    "rows_original": 10,
+    "rows_modeling": 10,
+    "feature_engineering": {
+        "lag_logic": [
+            "lag_1",
+            "lag_2",
+            "lag_4",
+            "lag_8"
+        ],
+        "rolling_logic": "roll_mean_4/8 and roll_std_4/8 from revenue.shift(1).rolling(window)",
+        "growth_logic": "growth_1 = pct_change(1).shift(1); log_growth_1 = log diff shifted by 1",
+        "macro_lag_logic": "macro_feature_lag_1q = macro_feature.shift(1) by company",
+        "micro_logic": "for each micro feature: lag_1, lag_4, growth_qoq shift(1), margin_lag1",
+        "active_macro_features": [
+            "earnings_before_interest_taxes_depreciation_amortization_ebi_lag_1q",
+            "income_tax_rate_lag_1q",
+            "earnings_before_interest_taxes_depreciation_amortization_ebi_57_lag_1q",
+            "interest_coverage_ratio_lag_1q",
+            "earnings_retention_rate_lag_1q",
+            "minority_interest_total_lag_1q",
+            "earnings_retention_rate_86_lag_1q",
+            "reinvestment_rate_lag_1q",
+            "CPI_lag_1q",
+            "DGS10_lag_1q",
+            "BRENT_lag_1q",
+            "NASDAQ_lag_1q",
+            "SP500_lag_1q"
+        ],
+        "active_micro_features": [
+            "statement_data_lag_1",
+            "statement_data_lag_4",
+            "statement_data_growth_qoq",
+            "statement_data_margin_lag1",
+            "operating_profit_before_non_recurring_income_expense_lag_1",
+            "operating_profit_before_non_recurring_income_expense_lag_4",
+            "operating_profit_before_non_recurring_income_expense_growth_qoq",
+            "operating_profit_before_non_recurring_income_expense_margin_lag1",
+            "income_before_discontinued_operations_extraordinary_items_lag_1",
+            "income_before_discontinued_operations_extraordinary_items_lag_4",
+            "income_before_discontinued_operations_extraordinary_items_growth_qoq",
+            "income_before_discontinued_operations_extraordinary_items_margin_lag1",
+            "cash_cash_equivalents_lag_1",
+            "cash_cash_equivalents_lag_4",
+            "cash_cash_equivalents_growth_qoq",
+            "cash_cash_equivalents_margin_lag1",
+            "cash_short_term_investments_lag_1",
+            "cash_short_term_investments_lag_4",
+            "cash_short_term_investments_growth_qoq",
+            "cash_short_term_investments_margin_lag1",
+            "total_assets_lag_1",
+            "total_assets_lag_4",
+            "total_assets_growth_qoq",
+            "total_assets_margin_lag1",
+            "debt_total_lag_1",
+            "debt_total_lag_4",
+            "debt_total_growth_qoq",
+            "debt_total_margin_lag1",
+            "common_equity_total_lag_1",
+            "common_equity_total_lag_4",
+            "common_equity_total_growth_qoq",
+            "common_equity_total_margin_lag1",
+            "net_cash_flow_from_operating_activities_lag_1",
+            "net_cash_flow_from_operating_activities_lag_4",
+            "net_cash_flow_from_operating_activities_growth_qoq",
+            "net_cash_flow_from_operating_activities_margin_lag1",
+            "depreciation_depletion_amortization_including_impairment_cas_lag_1",
+            "depreciation_depletion_amortization_including_impairment_cas_lag_4",
+            "depreciation_depletion_amortization_including_impairment_cas_growth_qoq",
+            "depreciation_depletion_amortization_including_impairment_cas_margin_lag1",
+            "capital_expenditures_net_cash_flow_lag_1",
+            "capital_expenditures_net_cash_flow_lag_4",
+            "capital_expenditures_net_cash_flow_growth_qoq",
+            "capital_expenditures_net_cash_flow_margin_lag1",
+            "net_change_in_cash_total_lag_1",
+            "net_change_in_cash_total_lag_4",
+            "net_change_in_cash_total_growth_qoq",
+            "net_change_in_cash_total_margin_lag1",
+            "free_cash_flow_net_of_dividends_lag_1",
+            "free_cash_flow_net_of_dividends_lag_4",
+            "free_cash_flow_net_of_dividends_growth_qoq",
+            "free_cash_flow_net_of_dividends_margin_lag1",
+            "dividend_yield_common_stock_gross_issue_specific_lag_1",
+            "dividend_yield_common_stock_gross_issue_specific_lag_4",
+            "dividend_yield_common_stock_gross_issue_specific_growth_qoq",
+            "dividend_yield_common_stock_gross_issue_specific_margin_lag1",
+            "dividend_yield_common_stock_net_issue_specific_lag_1",
+            "dividend_yield_common_stock_net_issue_specific_lag_4",
+            "dividend_yield_common_stock_net_issue_specific_growth_qoq",
+            "dividend_yield_common_stock_net_issue_specific_margin_lag1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_lag_1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_lag_4",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_growth_qoq",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_margin_lag1",
+            "shares_used_to_calculate_diluted_eps_total_lag_1",
+            "shares_used_to_calculate_diluted_eps_total_lag_4",
+            "shares_used_to_calculate_diluted_eps_total_growth_qoq",
+            "shares_used_to_calculate_diluted_eps_total_margin_lag1",
+            "non_gaap_income_from_operations_company_reported_lag_1",
+            "non_gaap_income_from_operations_company_reported_lag_4",
+            "non_gaap_income_from_operations_company_reported_growth_qoq",
+            "non_gaap_income_from_operations_company_reported_margin_lag1",
+            "non_gaap_adjusted_net_earnings_company_reported_lag_1",
+            "non_gaap_adjusted_net_earnings_company_reported_lag_4",
+            "non_gaap_adjusted_net_earnings_company_reported_growth_qoq",
+            "non_gaap_adjusted_net_earnings_company_reported_margin_lag1",
+            "non_gaap_eps_diluted_company_reported_lag_1",
+            "non_gaap_eps_diluted_company_reported_lag_4",
+            "non_gaap_eps_diluted_company_reported_growth_qoq",
+            "non_gaap_eps_diluted_company_reported_margin_lag1",
+            "non_gaap_free_cash_flow_company_reported_lag_1",
+            "non_gaap_free_cash_flow_company_reported_lag_4",
+            "non_gaap_free_cash_flow_company_reported_growth_qoq",
+            "non_gaap_free_cash_flow_company_reported_margin_lag1",
+            "gross_profit_margin_lag_1",
+            "gross_profit_margin_lag_4",
+            "gross_profit_margin_growth_qoq",
+            "gross_profit_margin_margin_lag1",
+            "ebitda_margin_lag_1",
+            "ebitda_margin_lag_4",
+            "ebitda_margin_growth_qoq",
+            "ebitda_margin_margin_lag1",
+            "operating_margin_lag_1",
+            "operating_margin_lag_4",
+            "operating_margin_growth_qoq",
+            "operating_margin_margin_lag1",
+            "income_before_tax_margin_lag_1",
+            "income_before_tax_margin_lag_4",
+            "income_before_tax_margin_growth_qoq",
+            "income_before_tax_margin_margin_lag1",
+            "net_margin_lag_1",
+            "net_margin_lag_4",
+            "net_margin_growth_qoq",
+            "net_margin_margin_lag1",
+            "free_cash_flow_lag_1",
+            "free_cash_flow_lag_4",
+            "free_cash_flow_growth_qoq",
+            "free_cash_flow_margin_lag1",
+            "return_on_average_common_equity_income_available_to_common_e_lag_1",
+            "return_on_average_common_equity_income_available_to_common_e_lag_4",
+            "return_on_average_common_equity_income_available_to_common_e_growth_qoq",
+            "return_on_average_common_equity_income_available_to_common_e_margin_lag1",
+            "return_on_average_total_assets_income_before_discontinued_op_lag_1",
+            "return_on_average_total_assets_income_before_discontinued_op_lag_4",
+            "return_on_average_total_assets_income_before_discontinued_op_growth_qoq",
+            "return_on_average_total_assets_income_before_discontinued_op_margin_lag1",
+            "return_on_invested_capital_lag_1",
+            "return_on_invested_capital_lag_4",
+            "return_on_invested_capital_growth_qoq",
+            "return_on_invested_capital_margin_lag1",
+            "revenue_from_business_activities_total_lag_1",
+            "revenue_from_business_activities_total_lag_4",
+            "revenue_from_business_activities_total_growth_qoq",
+            "revenue_from_business_activities_total_margin_lag1",
+            "operating_profit_before_non_recurring_income_expense_56_lag_1",
+            "operating_profit_before_non_recurring_income_expense_56_lag_4",
+            "operating_profit_before_non_recurring_income_expense_56_growth_qoq",
+            "operating_profit_before_non_recurring_income_expense_56_margin_lag1",
+            "income_before_discontinued_operations_extraordinary_items_58_lag_1",
+            "income_before_discontinued_operations_extraordinary_items_58_lag_4",
+            "income_before_discontinued_operations_extraordinary_items_58_growth_qoq",
+            "income_before_discontinued_operations_extraordinary_items_58_margin_lag1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_59_lag_1",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_59_lag_4",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_59_growth_qoq",
+            "eps_diluted_excluding_extraordinary_items_applicable_to_comm_59_margin_lag1",
+            "common_shares_outstanding_total_lag_1",
+            "common_shares_outstanding_total_lag_4",
+            "common_shares_outstanding_total_growth_qoq",
+            "common_shares_outstanding_total_margin_lag1",
+            "total_debt_percentage_of_total_assets_lag_1",
+            "total_debt_percentage_of_total_assets_lag_4",
+            "total_debt_percentage_of_total_assets_growth_qoq",
+            "total_debt_percentage_of_total_assets_margin_lag1",
+            "total_debt_percentage_of_total_capital_lag_1",
+            "total_debt_percentage_of_total_capital_lag_4",
+            "total_debt_percentage_of_total_capital_growth_qoq",
+            "total_debt_percentage_of_total_capital_margin_lag1",
+            "total_debt_percentage_of_total_equity_lag_1",
+            "total_debt_percentage_of_total_equity_lag_4",
+            "total_debt_percentage_of_total_equity_growth_qoq",
+            "total_debt_percentage_of_total_equity_margin_lag1",
+            "debt_service_lag_1",
+            "debt_service_lag_4",
+            "debt_service_growth_qoq",
+            "debt_service_margin_lag1",
+            "debt_service_percentage_of_normalized_after_tax_profit_lag_1",
+            "debt_service_percentage_of_normalized_after_tax_profit_lag_4",
+            "debt_service_percentage_of_normalized_after_tax_profit_growth_qoq",
+            "debt_service_percentage_of_normalized_after_tax_profit_margin_lag1",
+            "dividend_coverage_lag_1",
+            "dividend_coverage_lag_4",
+            "dividend_coverage_growth_qoq",
+            "dividend_coverage_margin_lag1",
+            "dividend_payout_ratio_lag_1",
+            "dividend_payout_ratio_lag_4",
+            "dividend_payout_ratio_growth_qoq",
+            "dividend_payout_ratio_margin_lag1",
+            "market_capitalization_lag_1",
+            "market_capitalization_lag_4",
+            "market_capitalization_growth_qoq",
+            "market_capitalization_margin_lag1",
+            "debt_total_73_lag_1",
+            "debt_total_73_lag_4",
+            "debt_total_73_growth_qoq",
+            "debt_total_73_margin_lag1",
+            "cash_short_term_investments_total_lag_1",
+            "cash_short_term_investments_total_lag_4",
+            "cash_short_term_investments_total_growth_qoq",
+            "cash_short_term_investments_total_margin_lag1",
+            "enterprise_value_lag_1",
+            "enterprise_value_lag_4",
+            "enterprise_value_growth_qoq",
+            "enterprise_value_margin_lag1",
+            "asset_turnover_lag_1",
+            "asset_turnover_lag_4",
+            "asset_turnover_growth_qoq",
+            "asset_turnover_margin_lag1",
+            "income_before_tax_margin_80_lag_1",
+            "income_before_tax_margin_80_lag_4",
+            "income_before_tax_margin_80_growth_qoq",
+            "income_before_tax_margin_80_margin_lag1",
+            "pretax_roa_lag_1",
+            "pretax_roa_lag_4",
+            "pretax_roa_growth_qoq",
+            "pretax_roa_margin_lag1",
+            "total_assets_to_total_shareholders_equity_including_minority_lag_1",
+            "total_assets_to_total_shareholders_equity_including_minority_lag_4",
+            "total_assets_to_total_shareholders_equity_including_minority_growth_qoq",
+            "total_assets_to_total_shareholders_equity_including_minority_margin_lag1",
+            "pretax_roe_lag_1",
+            "pretax_roe_lag_4",
+            "pretax_roe_growth_qoq",
+            "pretax_roe_margin_lag1",
+            "tax_complement_lag_1",
+            "tax_complement_lag_4",
+            "tax_complement_growth_qoq",
+            "tax_complement_margin_lag1",
+            "return_on_average_common_equity_income_available_to_common_e_85_lag_1",
+            "return_on_average_common_equity_income_available_to_common_e_85_lag_4",
+            "return_on_average_common_equity_income_available_to_common_e_85_growth_qoq",
+            "return_on_average_common_equity_income_available_to_common_e_85_margin_lag1",
+            "net_income_after_tax_per_employee_lag_1",
+            "net_income_after_tax_per_employee_lag_4",
+            "net_income_after_tax_per_employee_growth_qoq",
+            "net_income_after_tax_per_employee_margin_lag1",
+            "sales_per_employee_lag_1",
+            "sales_per_employee_lag_4",
+            "sales_per_employee_growth_qoq",
+            "sales_per_employee_margin_lag1",
+            "total_assets_per_employee_lag_1",
+            "total_assets_per_employee_lag_4",
+            "total_assets_per_employee_growth_qoq",
+            "total_assets_per_employee_margin_lag1",
+            "current_ratio_lag_1",
+            "current_ratio_lag_4",
+            "current_ratio_growth_qoq",
+            "current_ratio_margin_lag1",
+            "quick_ratio_lag_1",
+            "quick_ratio_lag_4",
+            "quick_ratio_growth_qoq",
+            "quick_ratio_margin_lag1",
+            "working_capital_to_total_assets_lag_1",
+            "working_capital_to_total_assets_lag_4",
+            "working_capital_to_total_assets_growth_qoq",
+            "working_capital_to_total_assets_margin_lag1",
+            "accounts_receivable_turnover_lag_1",
+            "accounts_receivable_turnover_lag_4",
+            "accounts_receivable_turnover_growth_qoq",
+            "accounts_receivable_turnover_margin_lag1",
+            "average_receivables_collection_days_lag_1",
+            "average_receivables_collection_days_lag_4",
+            "average_receivables_collection_days_growth_qoq",
+            "average_receivables_collection_days_margin_lag1",
+            "payables_turnover_lag_1",
+            "payables_turnover_lag_4",
+            "payables_turnover_growth_qoq",
+            "payables_turnover_margin_lag1",
+            "average_payables_payment_days_lag_1",
+            "average_payables_payment_days_lag_4",
+            "average_payables_payment_days_growth_qoq",
+            "average_payables_payment_days_margin_lag1",
+            "inventory_turnover_lag_1",
+            "inventory_turnover_lag_4",
+            "inventory_turnover_growth_qoq",
+            "inventory_turnover_margin_lag1",
+            "average_inventory_days_lag_1",
+            "average_inventory_days_lag_4",
+            "average_inventory_days_growth_qoq",
+            "average_inventory_days_margin_lag1",
+            "average_net_trade_cycle_days_lag_1",
+            "average_net_trade_cycle_days_lag_4",
+            "average_net_trade_cycle_days_growth_qoq",
+            "average_net_trade_cycle_days_margin_lag1",
+            "fiscal_year_lag_1",
+            "fiscal_year_lag_4",
+            "fiscal_year_growth_qoq",
+            "fiscal_year_margin_lag1",
+            "fiscal_quarter_lag_1",
+            "fiscal_quarter_lag_4",
+            "fiscal_quarter_growth_qoq",
+            "fiscal_quarter_margin_lag1"
+        ]
+    },
+    "validation_split": {
+        "primary": "split_last_n_by_company(n_test=4)",
+        "robustness_16q_enabled": false
+    },
+    "model_comparison_logic": "Rank by sMAPE, then MAPE, then RMSE, then MAE",
+    "log_target_handling": "log1p target with Duan smearing on inverse transform",
+    "selected_target_policy": "log-target company policy from notebook",
+    "recursive_forecasting_logic": "Step-by-step: append future quarter row, rebuild features, predict, write predicted revenue back, repeat",
+    "pipeline_environment": {
+        "variant": "notebook-parity backend pipeline",
+        "core_runtime_models": {
+            "Linear Regression": true,
+            "Random Forest": true,
+            "SVR": true,
+            "XGBoost": true,
+            "ARIMA": true,
+            "SARIMA": true,
+            "Prophet": true,
+            "LSTM": true
+        },
+        "optional_dependency_status": {
+            "statsmodels_for_arima_sarima": true,
+            "prophet": true,
+            "tensorflow_for_lstm": true,
+            "xgboost": true
+        },
+        "xgboost_import_error": null,
+        "model_skip_reason": {
+            "Prophet": "No valid Prophet parameter set fit successfully.",
+            "Prophet log-target": "No valid Prophet log-target parameter set fit successfully.",
+            "LSTM": "Insufficient history for LSTM lookback.",
+            "LSTM log-target": "Insufficient history for LSTM lookback."
+        }
+    },
+    "all_model_metrics": [
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 426.8256863141306,
+            "RMSE": 635.5876804956392,
+            "MAPE": 458.66630647908,
+            "sMAPE": 121.00237722083935,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 15.520021478600967,
+            "RMSE": 15.910917130944947,
+            "MAPE": 16.971350561505545,
+            "sMAPE": 18.619785320584732,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.436035899144617,
+            "RMSE": 22.606696062620607,
+            "MAPE": 24.607593984374567,
+            "sMAPE": 28.100730315658346,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.620478265506456,
+            "RMSE": 11.972024393122481,
+            "MAPE": 12.695766510331705,
+            "sMAPE": 13.60496954055913,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 7.159726837016915,
+            "RMSE": 7.620216292466298,
+            "MAPE": 7.851348248137863,
+            "sMAPE": 8.02403368460632,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 18.817627145781607,
+            "RMSE": 19.025604757818034,
+            "MAPE": 20.623362225974816,
+            "sMAPE": 23.03793282721214,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.627152439325048,
+            "RMSE": 22.79638189521428,
+            "MAPE": 24.81802047249729,
+            "sMAPE": 28.3745931259495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.459618396132793,
+            "RMSE": 11.833648116022692,
+            "MAPE": 12.515965690128006,
+            "sMAPE": 13.403189898965987,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 57.69046985785663,
+            "RMSE": 60.09309720527799,
+            "MAPE": 62.94989011260399,
+            "sMAPE": 96.15312140952584,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 17.78733991904016,
+            "RMSE": 18.09179492594371,
+            "MAPE": 19.478877061556297,
+            "sMAPE": 21.64899398481463,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.560984462044395,
+            "RMSE": 22.73070655005979,
+            "MAPE": 24.7451670422699,
+            "sMAPE": 28.279702486491026,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.527248225868814,
+            "RMSE": 11.856090307326397,
+            "MAPE": 12.596593916045718,
+            "sMAPE": 13.488097420700813,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 5.487021532782556,
+            "RMSE": 6.522252320866862,
+            "MAPE": 6.04015648743664,
+            "sMAPE": 5.940996219166501,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 18.535084888753417,
+            "RMSE": 18.748725952039198,
+            "MAPE": 20.31142443890539,
+            "sMAPE": 22.651523350410265,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.628392220565193,
+            "RMSE": 22.79761247340904,
+            "MAPE": 24.81938551820269,
+            "sMAPE": 28.37637183330606,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.507293881075345,
+            "RMSE": 11.834311144988503,
+            "MAPE": 12.57497606384654,
+            "sMAPE": 13.46310807265681,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 4,
+            "MAE": 6.492627023568833,
+            "RMSE": 7.059830427650248,
+            "MAPE": 7.053302057444635,
+            "sMAPE": 7.357532779880555,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA log-target",
+            "target_type": "log1p revenue",
+            "n_test_points": 4,
+            "MAE": 886.3912154773427,
+            "RMSE": 886.3955515882293,
+            "MAPE": 976.0453408000025,
+            "sMAPE": 165.96051339439163,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "SARIMA",
+            "target_type": "seasonal revenue time series",
+            "n_test_points": 4,
+            "MAE": 74.38671232876644,
+            "RMSE": 100.51764632923397,
+            "MAPE": 80.03755540455325,
+            "sMAPE": 48.641427703465055,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "SARIMA log-target",
+            "target_type": "log1p revenue",
+            "n_test_points": 4,
+            "MAE": 185768.22195307122,
+            "RMSE": 363454.4419354246,
+            "MAPE": 197892.99311640856,
+            "sMAPE": 188.92850626120082,
+            "split": "last_4q"
+        }
+    ],
+    "all_model_metrics_8q": [
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 127.77193809756379,
+            "RMSE": 142.4052156227468,
+            "MAPE": 139.85205415044823,
+            "sMAPE": 107.1894209068467,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 15.962425000000014,
+            "RMSE": 16.302093024593514,
+            "MAPE": 17.463740968939753,
+            "sMAPE": 19.19996235378717,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 23.621731621678922,
+            "RMSE": 23.7838854018141,
+            "MAPE": 25.91308950370262,
+            "sMAPE": 29.81047361854378,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "XGBoost",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 11.565609130859375,
+            "RMSE": 11.92002049095491,
+            "MAPE": 12.63519026364074,
+            "sMAPE": 13.536135094029724,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 426.8256863141306,
+            "RMSE": 635.5876804956392,
+            "MAPE": 458.66630647908,
+            "sMAPE": 121.00237722083935,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 15.520021478600967,
+            "RMSE": 15.910917130944947,
+            "MAPE": 16.971350561505545,
+            "sMAPE": 18.619785320584732,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.436035899144617,
+            "RMSE": 22.606696062620607,
+            "MAPE": 24.607593984374567,
+            "sMAPE": 28.100730315658346,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.620478265506456,
+            "RMSE": 11.972024393122481,
+            "MAPE": 12.695766510331705,
+            "sMAPE": 13.60496954055913,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Linear Regression",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 7.566105928378299,
+            "RMSE": 8.645620342755608,
+            "MAPE": 8.286084120376572,
+            "sMAPE": 8.74598948612214,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Random Forest",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 19.943850000000136,
+            "RMSE": 20.11136199225052,
+            "MAPE": 21.871753283740507,
+            "sMAPE": 24.59254624128527,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "SVR",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 24.36565006617457,
+            "RMSE": 24.522885294093616,
+            "MAPE": 26.732171648958875,
+            "sMAPE": 30.896336534992873,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "XGBoost",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 11.33782974243164,
+            "RMSE": 11.704503059531547,
+            "MAPE": 12.38341525235969,
+            "sMAPE": 13.250740751092028,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 7.159726837016915,
+            "RMSE": 7.620216292466298,
+            "MAPE": 7.851348248137863,
+            "sMAPE": 8.02403368460632,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 18.817627145781607,
+            "RMSE": 19.025604757818034,
+            "MAPE": 20.623362225974816,
+            "sMAPE": 23.03793282721214,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.627152439325048,
+            "RMSE": 22.79638189521428,
+            "MAPE": 24.81802047249729,
+            "sMAPE": 28.3745931259495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.459618396132793,
+            "RMSE": 11.833648116022692,
+            "MAPE": 12.515965690128006,
+            "sMAPE": 13.403189898965987,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 82.6899474584647,
+            "RMSE": 91.27518060613905,
+            "MAPE": 89.82785920460871,
+            "sMAPE": 139.64600196875762,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 16.771850000000043,
+            "RMSE": 17.033123034807517,
+            "MAPE": 18.364727802687174,
+            "sMAPE": 20.27244685881657,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 24.37888603940478,
+            "RMSE": 24.536036447466962,
+            "MAPE": 26.74674495238033,
+            "sMAPE": 30.915749413963212,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "XGBoost",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 11.453542861938477,
+            "RMSE": 11.784546729158562,
+            "MAPE": 12.515426073826413,
+            "sMAPE": 13.395732559731288,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 57.69046985785663,
+            "RMSE": 60.09309720527799,
+            "MAPE": 62.94989011260399,
+            "sMAPE": 96.15312140952584,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 17.78733991904016,
+            "RMSE": 18.09179492594371,
+            "MAPE": 19.478877061556297,
+            "sMAPE": 21.64899398481463,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.560984462044395,
+            "RMSE": 22.73070655005979,
+            "MAPE": 24.7451670422699,
+            "sMAPE": 28.279702486491026,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.527248225868814,
+            "RMSE": 11.856090307326397,
+            "MAPE": 12.596593916045718,
+            "sMAPE": 13.488097420700813,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Linear Regression",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 5.66986613285918,
+            "RMSE": 6.0550196230121625,
+            "MAPE": 6.227538673725787,
+            "sMAPE": 6.409395864635853,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Random Forest",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 19.87939166666674,
+            "RMSE": 20.057049878180898,
+            "MAPE": 21.798419141533554,
+            "sMAPE": 24.502677177359942,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "SVR",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 24.376731006428603,
+            "RMSE": 24.533895217836438,
+            "MAPE": 26.744372180323417,
+            "sMAPE": 30.91258845716836,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "XGBoost",
+            "target_type": "raw revenue",
+            "n_test_points": 4,
+            "MAE": 11.42133918762207,
+            "RMSE": 11.752574335355847,
+            "MAPE": 12.48006591385456,
+            "sMAPE": 13.355408851176229,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 5.487021532782556,
+            "RMSE": 6.522252320866862,
+            "MAPE": 6.04015648743664,
+            "sMAPE": 5.940996219166501,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 18.535084888753417,
+            "RMSE": 18.748725952039198,
+            "MAPE": 20.31142443890539,
+            "sMAPE": 22.651523350410265,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.628392220565193,
+            "RMSE": 22.79761247340904,
+            "MAPE": 24.81938551820269,
+            "sMAPE": 28.37637183330606,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.507293881075345,
+            "RMSE": 11.834311144988503,
+            "MAPE": 12.57497606384654,
+            "sMAPE": 13.46310807265681,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 4,
+            "MAE": 6.492627023568833,
+            "RMSE": 7.059830427650248,
+            "MAPE": 7.053302057444635,
+            "sMAPE": 7.357532779880555,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA log-target",
+            "target_type": "log1p revenue",
+            "n_test_points": 4,
+            "MAE": 886.3912154773427,
+            "RMSE": 886.3955515882293,
+            "MAPE": 976.0453408000025,
+            "sMAPE": 165.96051339439163,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "SARIMA",
+            "target_type": "seasonal revenue time series",
+            "n_test_points": 4,
+            "MAE": 74.38671232876644,
+            "RMSE": 100.51764632923397,
+            "MAPE": 80.03755540455325,
+            "sMAPE": 48.641427703465055,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "SARIMA log-target",
+            "target_type": "log1p revenue",
+            "n_test_points": 4,
+            "MAE": 185768.22195307122,
+            "RMSE": 363454.4419354246,
+            "MAPE": 197892.99311640856,
+            "sMAPE": 188.92850626120082,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "ensemble",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "target_type": "scenario-specific ARIMA + RF + XGBoost ensemble",
+            "n_test_points": 4,
+            "MAE": 9.754898920368412,
+            "RMSE": 10.188531494666368,
+            "MAPE": 10.63978868972247,
+            "sMAPE": 11.289129964885989,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "ensemble",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "target_type": "scenario-specific ARIMA + RF + XGBoost ensemble",
+            "n_test_points": 4,
+            "MAE": 10.0274793638747,
+            "RMSE": 10.414951874139055,
+            "MAPE": 10.943894973971661,
+            "sMAPE": 11.624224099716605,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "ensemble",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "target_type": "scenario-specific ARIMA + RF + XGBoost ensemble",
+            "n_test_points": 4,
+            "MAE": 9.868580651975691,
+            "RMSE": 10.260433814091952,
+            "MAPE": 10.769133151069282,
+            "sMAPE": 11.428666911804399,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "ensemble",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "target_type": "scenario-specific ARIMA + RF + XGBoost ensemble",
+            "n_test_points": 4,
+            "MAE": 10.025570075976585,
+            "RMSE": 10.40342264407924,
+            "MAPE": 10.943038292099452,
+            "sMAPE": 11.621922837210477,
+            "split": "last_4q"
+        }
+    ],
+    "all_model_metrics_16q": [],
+    "top_3_models_for_this_company": [
+        {
+            "rank": 1,
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 5.487021532782556,
+            "RMSE": 6.522252320866862,
+            "MAPE": 6.04015648743664,
+            "sMAPE": 5.940996219166501,
+            "split": "last_4q"
+        },
+        {
+            "rank": 2,
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 4,
+            "MAE": 6.492627023568833,
+            "RMSE": 7.059830427650248,
+            "MAPE": 7.053302057444635,
+            "sMAPE": 7.357532779880555,
+            "split": "last_4q"
+        },
+        {
+            "rank": 3,
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 7.159726837016915,
+            "RMSE": 7.620216292466298,
+            "MAPE": 7.851348248137863,
+            "sMAPE": 8.02403368460632,
+            "split": "last_4q"
+        }
+    ],
+    "best_model_for_this_company": "Linear Regression log-target",
+    "best_model": "Linear Regression log-target",
+    "best_time_series_model": "ARIMA",
+    "top_models": [
+        {
+            "rank": 1,
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 5.487021532782556,
+            "RMSE": 6.522252320866862,
+            "MAPE": 6.04015648743664,
+            "sMAPE": 5.940996219166501,
+            "split": "last_4q"
+        },
+        {
+            "rank": 2,
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 4,
+            "MAE": 6.492627023568833,
+            "RMSE": 7.059830427650248,
+            "MAPE": 7.053302057444635,
+            "sMAPE": 7.357532779880555,
+            "split": "last_4q"
+        },
+        {
+            "rank": 3,
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 7.159726837016915,
+            "RMSE": 7.620216292466298,
+            "MAPE": 7.851348248137863,
+            "sMAPE": 8.02403368460632,
+            "split": "last_4q"
+        }
+    ],
+    "leaderboard": [
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 5.487021532782556,
+            "RMSE": 6.522252320866862,
+            "MAPE": 6.04015648743664,
+            "sMAPE": 5.940996219166501,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA",
+            "target_type": "revenue time series",
+            "n_test_points": 4,
+            "MAE": 6.492627023568833,
+            "RMSE": 7.059830427650248,
+            "MAPE": 7.053302057444635,
+            "sMAPE": 7.357532779880555,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 7.159726837016915,
+            "RMSE": 7.620216292466298,
+            "MAPE": 7.851348248137863,
+            "sMAPE": 8.02403368460632,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.459618396132793,
+            "RMSE": 11.833648116022692,
+            "MAPE": 12.515965690128006,
+            "sMAPE": 13.403189898965987,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.507293881075345,
+            "RMSE": 11.834311144988503,
+            "MAPE": 12.57497606384654,
+            "sMAPE": 13.46310807265681,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.527248225868814,
+            "RMSE": 11.856090307326397,
+            "MAPE": 12.596593916045718,
+            "sMAPE": 13.488097420700813,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "XGBoost log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 11.620478265506456,
+            "RMSE": 11.972024393122481,
+            "MAPE": 12.695766510331705,
+            "sMAPE": 13.60496954055913,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 15.520021478600967,
+            "RMSE": 15.910917130944947,
+            "MAPE": 16.971350561505545,
+            "sMAPE": 18.619785320584732,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 17.78733991904016,
+            "RMSE": 18.09179492594371,
+            "MAPE": 19.478877061556297,
+            "sMAPE": 21.64899398481463,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 18.535084888753417,
+            "RMSE": 18.748725952039198,
+            "MAPE": 20.31142443890539,
+            "sMAPE": 22.651523350410265,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "Random Forest log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 18.817627145781607,
+            "RMSE": 19.025604757818034,
+            "MAPE": 20.623362225974816,
+            "sMAPE": 23.03793282721214,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.436035899144617,
+            "RMSE": 22.606696062620607,
+            "MAPE": 24.607593984374567,
+            "sMAPE": 28.100730315658346,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.560984462044395,
+            "RMSE": 22.73070655005979,
+            "MAPE": 24.7451670422699,
+            "sMAPE": 28.279702486491026,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.627152439325048,
+            "RMSE": 22.79638189521428,
+            "MAPE": 24.81802047249729,
+            "sMAPE": 28.3745931259495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model_family": "machine_learning",
+            "model": "SVR log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 22.628392220565193,
+            "RMSE": 22.79761247340904,
+            "MAPE": 24.81938551820269,
+            "sMAPE": 28.37637183330606,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "SARIMA",
+            "target_type": "seasonal revenue time series",
+            "n_test_points": 4,
+            "MAE": 74.38671232876644,
+            "RMSE": 100.51764632923397,
+            "MAPE": 80.03755540455325,
+            "sMAPE": 48.641427703465055,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 57.69046985785663,
+            "RMSE": 60.09309720527799,
+            "MAPE": 62.94989011260399,
+            "sMAPE": 96.15312140952584,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model_family": "machine_learning",
+            "model": "Linear Regression log-target",
+            "target_type": "log1p revenue + Duan smearing",
+            "n_test_points": 4,
+            "MAE": 426.8256863141306,
+            "RMSE": 635.5876804956392,
+            "MAPE": 458.66630647908,
+            "sMAPE": 121.00237722083935,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "ARIMA log-target",
+            "target_type": "log1p revenue",
+            "n_test_points": 4,
+            "MAE": 886.3912154773427,
+            "RMSE": 886.3955515882293,
+            "MAPE": 976.0453408000025,
+            "sMAPE": 165.96051339439163,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model_family": "time_series",
+            "model": "SARIMA log-target",
+            "target_type": "log1p revenue",
+            "n_test_points": 4,
+            "MAE": 185768.22195307122,
+            "RMSE": 363454.4419354246,
+            "MAPE": 197892.99311640856,
+            "sMAPE": 188.92850626120082,
+            "split": "last_4q"
+        }
+    ],
+    "scenario_comparison": [
+        {
+            "scenario": "S4",
+            "scenario_name": "engineered_plus_micro_plus_macro",
+            "best_model": "Linear Regression log-target",
+            "model_family": "machine_learning",
+            "MAE": 5.487021532782556,
+            "RMSE": 6.522252320866862,
+            "MAPE": 6.04015648743664,
+            "sMAPE": 5.940996219166501,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "scenario_name": "engineered_plus_micro",
+            "best_model": "Linear Regression log-target",
+            "model_family": "machine_learning",
+            "MAE": 7.159726837016915,
+            "RMSE": 7.620216292466298,
+            "MAPE": 7.851348248137863,
+            "sMAPE": 8.02403368460632,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "scenario_name": "engineered_plus_macro",
+            "best_model": "XGBoost log-target",
+            "model_family": "machine_learning",
+            "MAE": 11.527248225868814,
+            "RMSE": 11.856090307326397,
+            "MAPE": 12.596593916045718,
+            "sMAPE": 13.488097420700813,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "scenario_name": "engineered_only",
+            "best_model": "XGBoost log-target",
+            "model_family": "machine_learning",
+            "MAE": 11.620478265506456,
+            "RMSE": 11.972024393122481,
+            "MAPE": 12.695766510331705,
+            "sMAPE": 13.60496954055913,
+            "split": "last_4q"
+        }
+    ],
+    "scenario_future_forecasts": {
+        "S1": {
+            "model": "XGBoost log-target",
+            "scenario": "S1",
+            "forecast_points": [],
+            "forecast_horizon_end": null
+        },
+        "S2": {
+            "model": "Linear Regression log-target",
+            "scenario": "S2",
+            "forecast_points": [],
+            "forecast_horizon_end": null
+        },
+        "S3": {
+            "model": "XGBoost log-target",
+            "scenario": "S3",
+            "forecast_points": [],
+            "forecast_horizon_end": null
+        },
+        "S4": {
+            "model": "Linear Regression log-target",
+            "scenario": "S4",
+            "forecast_points": [],
+            "forecast_horizon_end": null
+        },
+        "TS": {
+            "model": "ARIMA",
+            "scenario": "TS",
+            "forecast_points": [],
+            "forecast_horizon_end": null
+        }
+    },
+    "scenario_skip_reason": {},
+    "model_skip_reason": {
+        "Prophet": "No valid Prophet parameter set fit successfully.",
+        "Prophet log-target": "No valid Prophet log-target parameter set fit successfully.",
+        "LSTM": "Insufficient history for LSTM lookback.",
+        "LSTM log-target": "Insufficient history for LSTM lookback."
+    },
+    "scenario_coverage": {
+        "attempted": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+        ],
+        "successful": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+        ],
+        "skipped": []
+    },
+    "forecast_start_date": "2026-03-31",
+    "forecast_end_date": "2032-12-31",
+    "forecast_horizon_quarters": 0,
+    "models_attempted": [
+        "S1::ARIMA+RF+XGBoost Ensemble",
+        "S1::Linear Regression",
+        "S1::Linear Regression log-target",
+        "S1::Random Forest",
+        "S1::Random Forest log-target",
+        "S1::SVR",
+        "S1::SVR log-target",
+        "S1::XGBoost",
+        "S1::XGBoost log-target",
+        "S2::ARIMA+RF+XGBoost Ensemble",
+        "S2::Linear Regression",
+        "S2::Linear Regression log-target",
+        "S2::Random Forest",
+        "S2::Random Forest log-target",
+        "S2::SVR",
+        "S2::SVR log-target",
+        "S2::XGBoost",
+        "S2::XGBoost log-target",
+        "S3::ARIMA+RF+XGBoost Ensemble",
+        "S3::Linear Regression",
+        "S3::Linear Regression log-target",
+        "S3::Random Forest",
+        "S3::Random Forest log-target",
+        "S3::SVR",
+        "S3::SVR log-target",
+        "S3::XGBoost",
+        "S3::XGBoost log-target",
+        "S4::ARIMA+RF+XGBoost Ensemble",
+        "S4::Linear Regression",
+        "S4::Linear Regression log-target",
+        "S4::Random Forest",
+        "S4::Random Forest log-target",
+        "S4::SVR",
+        "S4::SVR log-target",
+        "S4::XGBoost",
+        "S4::XGBoost log-target",
+        "TS::ARIMA",
+        "TS::ARIMA log-target",
+        "TS::SARIMA",
+        "TS::SARIMA log-target"
+    ],
+    "deployment_selected_model": "Linear Regression log-target",
+    "deployment_selected_scenario": "S4",
+    "deployment_selection_reason": "Notebook-style selection: top-ranked selected-target model on last-8-quarter comparison.",
+    "deployment_stability_check": {
+        "passed": false,
+        "reason": "Rejected: empty recursive forecast."
+    },
+    "frontend_notice": "No stable forecast until 2032 is available. Validation metrics are still shown, but long-horizon projection should not be used.",
+    "validation_predictions": [
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": -29.434233853259258,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 130.19421228701003,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 233.77391382387577,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 308.5453924261101,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 75.39146666666666,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 75.39146666666666,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 75.39146666666666,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 73.61589999999997,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 67.28826837832108,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 67.28826837832108,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 67.28826837832108,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 67.28826837832108,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.44477844238281,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.44477844238281,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.44477844238281,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.04322814941406,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 16.347179513706227,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 136.27692593841664,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 475.14801630208297,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Linear Regression log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 1303.0849825297291,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 75.97907192283945,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 75.97907192283945,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 75.97907192283945,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "Random Forest log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 73.62269831707778,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 68.47396410085538,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 68.47396410085538,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 68.47396410085538,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "SVR log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 68.47396410085538,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.38542574337639,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.38542574337639,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.38542574337639,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "XGBoost log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.00180970784501,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 78.89797875058778,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 93.31245833793416,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 84.58117317402477,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 80.26888269980842,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 70.48463333333319,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 70.60189999999987,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 71.9024333333332,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 70.87563333333318,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 66.54434993382543,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 66.54434993382543,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 66.54434993382543,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 66.54434993382543,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.81998443603516,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.4822006225586,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.49324798583984,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.49324798583984,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.89117295350664,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 99.4408864099085,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 88.37912512885462,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Linear Regression log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 83.23168097947958,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 72.04334162615703,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 71.77507111248806,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 72.69597395670392,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "Random Forest log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 71.85510472152455,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 68.28284756067495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 68.28284756067495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 68.28284756067495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "SVR log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 68.28284756067495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.76897837501016,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.38755670080806,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.3224956698253,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S2",
+            "model": "XGBoost log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.3224956698253,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 53.59612864655662,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 23.02522628173363,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 1.8334307770507792,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": -45.57457553919984,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 74.46109999999999,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 73.69076666666659,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 74.48409999999996,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 73.9166333333333,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 66.5311139702662,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 66.53111395737156,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 66.53111395737156,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 66.53111395737156,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.45809936523438,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.45588684082031,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.45588684082031,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.4559555053711,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 54.65637030517196,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 35.06216965602088,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 27.080537023486198,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Linear Regression log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 16.07904358389447,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 74.17446035432872,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 70.92518118152499,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 73.39220775646018,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "Random Forest log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 73.99879103152547,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 68.34901566018648,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 68.34901549721198,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 68.34901549721198,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "SVR log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 68.34901549721198,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.38355669627167,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.38248346675103,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.38248346675103,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S3",
+            "model": "XGBoost log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.38248346675103,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 80.32774832317553,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 95.40957701209886,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 88.15888512432267,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 84.94347903316395,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 70.60166666666659,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 70.81909999999995,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 71.97493333333324,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 70.72673333333326,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 66.5332689935714,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 66.5332689935714,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 66.5332689935714,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 66.5332689935714,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.4867172241211,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.4820556640625,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.49293518066406,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.49293518066406,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 81.5603708380028,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 102.50219480895389,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 93.076104984807,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Linear Regression log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 89.06984282462788,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 72.36904270521495,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 72.1300671344051,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 72.86685024310096,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "Random Forest log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 72.13370036226533,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 68.28160777943481,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 68.28160777943481,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 68.28160777943481,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "SVR log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 68.28160777943481,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 79.38482229677518,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 79.4085140256364,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 79.40874407664352,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S4",
+            "model": "XGBoost log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 79.40874407664352,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 84.41737297643117,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 84.41737297643117,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 84.41737297643117,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 84.41737297643117,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 977.3012154773428,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 977.3012154773428,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 977.3012154773428,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "ARIMA log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 977.3012154773428,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 93.5563013698629,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 124.72068493150643,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 164.73575342465705,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 278.17410958903935,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA log-target",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 1201.384820700382,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA log-target",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 2418.0840688537232,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA log-target",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 12932.241913688085,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "TS",
+            "model": "SARIMA log-target",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 726884.8170090427,
+            "split": "last_4q"
+        },
+        {
+            "scenario": "S1",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 81.3033159948507,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5158112978479337,
+                "RF": 0.20382074587902518,
+                "XGBoost": 0.28036795627304123
+            }
+        },
+        {
+            "scenario": "S1",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 81.3033159948507,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5158112978479337,
+                "RF": 0.20382074587902518,
+                "XGBoost": 0.28036795627304123
+            }
+        },
+        {
+            "scenario": "S1",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 81.3033159948507,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5158112978479337,
+                "RF": 0.20382074587902518,
+                "XGBoost": 0.28036795627304123
+            }
+        },
+        {
+            "scenario": "S1",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 80.71045633397424,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5158112978479337,
+                "RF": 0.20382074587902518,
+                "XGBoost": 0.28036795627304123
+            }
+        },
+        {
+            "scenario": "S2",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 80.94756901258174,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5334413118130368,
+                "RF": 0.1703630255042223,
+                "XGBoost": 0.29619566268274083
+            }
+        },
+        {
+            "scenario": "S2",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 80.80181553574332,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5334413118130368,
+                "RF": 0.1703630255042223,
+                "XGBoost": 0.29619566268274083
+            }
+        },
+        {
+            "scenario": "S2",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 80.96197551156736,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5334413118130368,
+                "RF": 0.1703630255042223,
+                "XGBoost": 0.29619566268274083
+            }
+        },
+        {
+            "scenario": "S2",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 80.81872248460878,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5334413118130368,
+                "RF": 0.1703630255042223,
+                "XGBoost": 0.29619566268274083
+            }
+        },
+        {
+            "scenario": "S3",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 81.10318720303711,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5229640927848425,
+                "RF": 0.18980074197070015,
+                "XGBoost": 0.28723516524445736
+            }
+        },
+        {
+            "scenario": "S3",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 80.95634184999,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5229640927848425,
+                "RF": 0.18980074197070015,
+                "XGBoost": 0.28723516524445736
+            }
+        },
+        {
+            "scenario": "S3",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 81.10691710528675,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5229640927848425,
+                "RF": 0.18980074197070015,
+                "XGBoost": 0.28723516524445736
+            }
+        },
+        {
+            "scenario": "S3",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 80.99923123378338,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5229640927848425,
+                "RF": 0.18980074197070015,
+                "XGBoost": 0.28723516524445736
+            }
+        },
+        {
+            "scenario": "S4",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2046-01-01",
+            "actual": 86.39,
+            "predicted": 80.88284217469571,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5331294966965548,
+                "RF": 0.1731679449185955,
+                "XGBoost": 0.2937025583848497
+            }
+        },
+        {
+            "scenario": "S4",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2049-01-01",
+            "actual": 91.47,
+            "predicted": 80.84009015409754,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5331294966965548,
+                "RF": 0.1731679449185955,
+                "XGBoost": 0.2937025583848497
+            }
+        },
+        {
+            "scenario": "S4",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2050-01-01",
+            "actual": 91.85,
+            "predicted": 80.97087271274101,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5331294966965548,
+                "RF": 0.1731679449185955,
+                "XGBoost": 0.2937025583848497
+            }
+        },
+        {
+            "scenario": "S4",
+            "model": "ARIMA+RF+XGBoost Ensemble",
+            "date": "2051-01-01",
+            "actual": 93.93,
+            "predicted": 80.8439146545594,
+            "split": "last_4q",
+            "component_models": {
+                "ARIMA": "ARIMA",
+                "RF": "Random Forest log-target",
+                "XGBoost": "XGBoost"
+            },
+            "ensemble_weights": {
+                "ARIMA": 0.5331294966965548,
+                "RF": 0.1731679449185955,
+                "XGBoost": 0.2937025583848497
+            }
+        }
+    ],
+    "robustness_validation_predictions_16q": [],
+    "future_forecast_steps": 0,
+    "future_forecast_preview": [],
+    "future_forecast_full": [],
+    "future_forecast_until_2032": {
+        "forecast_start_date": "2026-03-31",
+        "forecast_end_date": "2032-12-31",
+        "horizon_quarters": 0,
+        "selected_for_deployment": {
+            "model": "Linear Regression log-target",
+            "scenario": "S4"
+        },
+        "forecast_points": [],
+        "direction": "unavailable"
+    },
+    "future_forecast_16q": {
+        "horizon_quarters": 16,
+        "selected_for_deployment": {
+            "model": "Linear Regression log-target",
+            "scenario": "S4"
+        },
+        "forecast_points": [],
+        "direction": "unavailable",
+        "forecast_horizon_end": null
+    },
+    "future_forecast_horizon_end": null,
+    "tuning_summary_rows": []
+}

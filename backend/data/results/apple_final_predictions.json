@@ -1,0 +1,226 @@
+[
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2023-12-30",
+        "actual": 119.6,
+        "predicted": 114.95139813963468
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2024-03-30",
+        "actual": 90.75,
+        "predicted": 92.74564564926214
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2024-06-29",
+        "actual": 85.78,
+        "predicted": 81.23363953948487
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2024-09-28",
+        "actual": 94.93,
+        "predicted": 92.03506399467335
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2024-12-28",
+        "actual": 124.3,
+        "predicted": 116.83551479367736
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2025-03-29",
+        "actual": 95.36,
+        "predicted": 93.41601816446894
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2025-06-28",
+        "actual": 94.04,
+        "predicted": 86.7756629880549
+    },
+    {
+        "company": "apple_final",
+        "model": "Linear Regression",
+        "date": "2025-09-27",
+        "actual": 102.5,
+        "predicted": 94.35131373371671
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2023-12-30",
+        "actual": 119.6,
+        "predicted": 109.12302743386263
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2024-03-30",
+        "actual": 90.75,
+        "predicted": 97.78024833333336
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2024-06-29",
+        "actual": 85.78,
+        "predicted": 85.5646419047619
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2024-09-28",
+        "actual": 94.93,
+        "predicted": 91.77429455063458
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2024-12-28",
+        "actual": 124.3,
+        "predicted": 108.96372928571445
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2025-03-29",
+        "actual": 95.36,
+        "predicted": 94.71954918868161
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2025-06-28",
+        "actual": 94.04,
+        "predicted": 88.01052207671957
+    },
+    {
+        "company": "apple_final",
+        "model": "Random Forest",
+        "date": "2025-09-27",
+        "actual": 102.5,
+        "predicted": 97.48767040163547
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2023-12-30",
+        "actual": 119.6,
+        "predicted": 86.96318402786292
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2024-03-30",
+        "actual": 90.75,
+        "predicted": 76.01506474677942
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2024-06-29",
+        "actual": 85.78,
+        "predicted": 77.31183181987167
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2024-09-28",
+        "actual": 94.93,
+        "predicted": 79.34548019457345
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2024-12-28",
+        "actual": 124.3,
+        "predicted": 80.2198411861717
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2025-03-29",
+        "actual": 95.36,
+        "predicted": 71.3964757061978
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2025-06-28",
+        "actual": 94.04,
+        "predicted": 71.16670451654704
+    },
+    {
+        "company": "apple_final",
+        "model": "SVR",
+        "date": "2025-09-27",
+        "actual": 102.5,
+        "predicted": 74.52776070508929
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2023-12-30",
+        "actual": 119.6,
+        "predicted": 109.80694580078125
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2024-03-30",
+        "actual": 90.75,
+        "predicted": 94.1370849609375
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2024-06-29",
+        "actual": 85.78,
+        "predicted": 83.6954574584961
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2024-09-28",
+        "actual": 94.93,
+        "predicted": 88.27987670898438
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2024-12-28",
+        "actual": 124.3,
+        "predicted": 106.31649780273438
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2025-03-29",
+        "actual": 95.36,
+        "predicted": 91.50993347167969
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2025-06-28",
+        "actual": 94.04,
+        "predicted": 86.78870391845703
+    },
+    {
+        "company": "apple_final",
+        "model": "XGBoost",
+        "date": "2025-09-27",
+        "actual": 102.5,
+        "predicted": 95.05298614501953
+    }
+]
