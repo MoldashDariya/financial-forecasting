@@ -102,8 +102,7 @@ Suggested order: `macro_indicators_arima_forecasting` first (it writes the macro
 
 ## Authors
 
-Author: D. Moldash (part of the diploma team).
+Author: D. Moldash.
 
 Supervisor: Ayagoz Imansakipova.
 
-The written report (explanatory note) is a separate document and is not part of this repository.
